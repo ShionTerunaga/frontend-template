@@ -1,0 +1,7 @@
+packages:
+  - "apps/react/next/app/*"
+  - "apps/react/next/pages/*"
+  - "apps/react/react-router/*"
+  - "apps/react/tanstack-router/*"
+  - "apps/vue/nuxt/*"
+  - "apps/vue/vue-router/*"
