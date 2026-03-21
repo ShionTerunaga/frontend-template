@@ -1,19 +1,8 @@
 import Head from "next/head";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Box, Heading } from "@/components/ui";
 import { ja } from "@/shared/lang/ja";
 import Link from "next/link";
 import homeScreenStyle from "./home.css";
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"]
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"]
-});
 
 function HomeScreen() {
     return (
@@ -28,10 +17,7 @@ function HomeScreen() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Box
-                as="main"
-                className={`${homeScreenStyle.pageRoot} ${geistSans.variable} ${geistMono.variable}`}
-            >
+            <Box as="main" className={homeScreenStyle.pageRoot}>
                 <Box as="section" className={homeScreenStyle.container}>
                     <Heading className={homeScreenStyle.heading}>
                         {ja.app.home.title}
