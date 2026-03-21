@@ -19,7 +19,7 @@
         "nuxt": "^4.3.0",
         "ts-common-by-teru": "github:ShionTerunaga/ts-common-by-teru#release",
         "vite": "^8.0.1",
-        "vitest": "^4.0.16",
+        "vitest": "^4.1.0",
         "vue": "^3.5.25",
         "vue-router": "^4.6.4",
         "zod": "^4.3.2"

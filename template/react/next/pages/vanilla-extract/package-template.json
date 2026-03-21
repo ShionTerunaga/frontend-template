@@ -29,7 +29,7 @@
         "style-loader": "^4.0.0",
         "ts-common-by-teru": "github:ShionTerunaga/ts-common-by-teru#release",
         "vite-tsconfig-paths": "^5.1.4",
-        "vitest": "^4.0.5",
+        "vitest": "^4.1.0",
         "zod": "^4.1.12"
     },
     "devDependencies": {
@@ -37,7 +37,7 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
-        "@vitest/coverage-v8": "^4.0.4",
+        "@vitest/coverage-v8": "^4.1.0",
         "babel-plugin-react-compiler": "1.0.0",
         "eslint": "^9",
         "eslint-config-next": "16.0.1",
