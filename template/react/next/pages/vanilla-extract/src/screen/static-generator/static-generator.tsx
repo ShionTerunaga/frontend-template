@@ -3,9 +3,9 @@ import { CardListView } from "@/components/view";
 import { APIView } from "@/features/harry-potter";
 import { ja } from "@/shared/lang/ja";
 import { CheckerProps } from "@/shared/types/object";
-import { Result } from "@/utils/result";
-import { Option } from "@/utils/option";
-import { FetcherError } from "@/utils/error/fetcher";
+import { Result } from "ts-common-by-teru";
+import { Option } from "ts-common-by-teru";
+import { FetcherError } from "@/shared/error/fetcher";
 
 interface Props {
     character: Result<Option<APIView[]>, FetcherError>;

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { optionUtility } from '@/utils/option'
+import { optionUtility } from 'ts-common-by-teru'
 import { appConfig } from '@/shared/config/config'
 import { type APIRes, getCharacter } from '@/features/harry-potter'
 

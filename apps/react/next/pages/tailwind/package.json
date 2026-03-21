@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "next build --webpack",
         "start": "next start",
         "lint": "eslint",
         "typecheck": "tsc --noEmit",
@@ -23,6 +23,7 @@
         "next": "16.1.5",
         "react": "19.2.0",
         "react-dom": "19.2.0",
+        "ts-common-by-teru": "github:ShionTerunaga/ts-common-by-teru#release",
         "vite-tsconfig-paths": "^5.1.4",
         "vitest": "^4.0.5",
         "zod": "^4.1.12"

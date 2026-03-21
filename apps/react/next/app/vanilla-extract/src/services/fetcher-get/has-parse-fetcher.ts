@@ -1,8 +1,8 @@
 import { core, ZodType } from "zod";
-import { Option, optionUtility } from "@/utils/option";
-import { resultUtility, Result } from "@/utils/result";
+import { Option, optionUtility } from "ts-common-by-teru";
+import { resultUtility, Result } from "ts-common-by-teru";
 import { fetcher } from "./fetcher";
-import { FetcherError } from "@/utils/error/fetcher/fetcher-error";
+import { FetcherError } from "@/shared/error/fetcher/fetcher-error";
 
 export async function hasParseFetcher<T extends ZodType, S>({
     url,

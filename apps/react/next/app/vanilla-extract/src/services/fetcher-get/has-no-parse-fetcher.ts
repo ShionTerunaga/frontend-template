@@ -1,8 +1,8 @@
 import z from "zod";
-import { Option } from "@/utils/option";
-import { Result } from "@/utils/result";
+import { Option } from "ts-common-by-teru";
+import { Result } from "ts-common-by-teru";
 import { fetcher } from "./fetcher";
-import { FetcherError } from "@/utils/error/fetcher";
+import { FetcherError } from "@/shared/error/fetcher";
 
 export async function hasNoParseFetcher<T extends z.ZodType>({
     url,

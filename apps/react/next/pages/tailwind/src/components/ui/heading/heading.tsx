@@ -3,7 +3,7 @@ import { headingFontStyle } from "./heading.style"; // Tailwind variants
 import { textColor, TextTheme } from "@/shared/theme/design-system.style";
 import { ChildrenOnly } from "@/shared/types/react";
 import { ElementType } from "react";
-import classMerger from "@/utils/class-merger";
+import { classMerger } from "ts-common-by-teru";
 
 type HeadingFont = keyof typeof headingFontStyle;
 interface HeadingStyle {

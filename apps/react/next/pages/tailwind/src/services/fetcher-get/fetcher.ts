@@ -1,11 +1,11 @@
 import { core, ZodType } from "zod";
-import { Option, optionUtility } from "@/utils/option";
-import { Result, resultUtility } from "@/utils/result";
+import { Option, optionUtility } from "ts-common-by-teru";
+import { Result, resultUtility } from "ts-common-by-teru";
 import {
     createFetcherError,
     FetcherError
-} from "@/utils/error/fetcher/fetcher-error";
-import { createHttpScheme } from "@/utils/error/http";
+} from "@/shared/error/fetcher/fetcher-error";
+import { createHttpScheme } from "@/shared/error/http";
 
 export async function fetcher<T extends ZodType>({
     url,

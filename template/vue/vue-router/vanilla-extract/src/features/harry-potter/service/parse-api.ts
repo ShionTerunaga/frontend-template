@@ -1,8 +1,8 @@
-import { resultUtility, type Result } from '@/utils/result'
+import { resultUtility, type Result } from 'ts-common-by-teru'
 import type { APIRes } from '../model/model-res'
 import type { APIView } from '../model/model-view'
-import { optionUtility, type Option } from '@/utils/option'
-import type { FetcherError } from '@/utils/error/fetcher'
+import { optionUtility, type Option } from 'ts-common-by-teru'
+import type { FetcherError } from '@/shared/error/fetcher'
 
 export function parseApi(api: APIRes): Result<Option<Array<APIView>>, FetcherError> {
   const { createOk } = resultUtility

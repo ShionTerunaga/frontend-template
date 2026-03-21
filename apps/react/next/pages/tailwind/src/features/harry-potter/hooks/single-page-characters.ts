@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { getCharacter } from "../service/get-character";
-import type { Option } from "@/utils/option";
+import type { Option } from "ts-common-by-teru";
 import type { APIView } from "../model/model-view";
 import type { SinglePageGetCharacters } from "./characters.type";
-import { optionUtility } from "@/utils/option";
-import { FetcherError } from "@/utils/error/fetcher";
+import { optionUtility } from "ts-common-by-teru";
+import { FetcherError } from "@/shared/error/fetcher";
 
 export function useSinglePageCharacters() {
     const { createNone, createSome } = optionUtility;

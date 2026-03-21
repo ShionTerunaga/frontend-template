@@ -1,8 +1,8 @@
-import { resultUtility, Result } from "@/utils/result";
+import { resultUtility, Result } from "ts-common-by-teru";
 import { RandomDogRes } from "../model/random-dog";
-import { createFetcherError } from "@/utils/error/fetcher";
-import { Option, optionUtility } from "@/utils/option";
-import { FetcherError } from "@/utils/error/fetcher";
+import { createFetcherError } from "@/shared/error/fetcher";
+import { Option, optionUtility } from "ts-common-by-teru";
+import { FetcherError } from "@/shared/error/fetcher";
 
 export function parseScheme(
     scheme: RandomDogRes

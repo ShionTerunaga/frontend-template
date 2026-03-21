@@ -1,6 +1,6 @@
 import { getRandomDog } from "@/features/random-dog";
 import { appConfig } from "@/shared/config/config";
-import { optionUtility } from "@/utils/option";
+import { optionUtility } from "ts-common-by-teru";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mockFetch = vi.fn();

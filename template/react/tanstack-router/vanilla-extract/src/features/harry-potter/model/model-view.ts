@@ -1,4 +1,4 @@
-import type { Option } from '@/utils/option'
+import type { Option } from 'ts-common-by-teru'
 
 export interface APIView {
     id: string

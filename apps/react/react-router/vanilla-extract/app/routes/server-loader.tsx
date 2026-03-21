@@ -1,8 +1,8 @@
 import { getCharacter, type APIView } from '@/features/harry-potter'
 import type { Route } from '../+types/root'
-import type { Result } from '@/utils/result'
-import type { Option } from '@/utils/option'
-import type { FetcherError } from '@/utils/error/fetcher'
+import type { Result } from 'ts-common-by-teru'
+import type { Option } from 'ts-common-by-teru'
+import type { FetcherError } from '@/shared/error/fetcher'
 import ServerLoaderView from '@/screen/server-loader/server-loader'
 
 export function meta({}: Route.MetaArgs) {

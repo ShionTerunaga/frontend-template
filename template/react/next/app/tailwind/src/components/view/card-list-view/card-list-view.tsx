@@ -2,7 +2,7 @@ import { Card } from "@/components/layout";
 import { Box, GridBox, Heading, FontCenter } from "@/components/ui";
 import { APIView } from "@/features/harry-potter";
 import { CheckerProps } from "@/shared/types/object";
-import classMerger from "@/utils/class-merger";
+import { classMerger } from "ts-common-by-teru";
 
 interface Props {
     potters: Array<APIView>;

@@ -1,8 +1,8 @@
-import { resultUtility, type Result } from '@/utils/result'
+import { resultUtility, type Result } from 'ts-common-by-teru'
 import type { APIView } from '../model/model-view'
-import { type Option, optionUtility } from '@/utils/option'
-import { isNull } from '@/utils/is'
-import type { FetcherError } from '@/utils/error/fetcher'
+import { type Option, optionUtility } from 'ts-common-by-teru'
+import { isNull } from 'ts-common-by-teru'
+import type { FetcherError } from '@/shared/error/fetcher'
 import type { APIRes } from '../model/model-res'
 
 export function parseApi(

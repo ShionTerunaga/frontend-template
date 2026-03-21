@@ -2,7 +2,7 @@
 import { CharacterList } from "~/components/view";
 import { getCharacter } from "~/features/harry-potter";
 import { ja } from "~/shared/lang/ja";
-import { optionUtility } from "~/utils/option";
+import { optionUtility } from "ts-common-by-teru";
 
 const { createNone, createSome } = optionUtility;
 

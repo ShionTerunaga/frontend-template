@@ -1,9 +1,9 @@
 import { APIView, getCharacter } from "@/features/harry-potter";
-import { Result } from "@/utils/result";
+import { Result } from "ts-common-by-teru";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import ServerSideRenderScreen from "@/screen/server-side-render/server-side-render-screen";
-import { Option } from "@/utils/option";
-import { FetcherError } from "@/utils/error/fetcher";
+import { Option } from "ts-common-by-teru";
+import { FetcherError } from "@/shared/error/fetcher";
 
 interface Props {
     character: Result<Option<APIView[]>, FetcherError>;

@@ -1,4 +1,4 @@
-import { envParse } from "@/utils/env-parse";
+import { envParse } from "ts-common-by-teru";
 
 export const appConfig = {
     get apiKey() {

@@ -9,7 +9,10 @@ export default defineConfig({
     plugins: [
         tailwindcss(),
         reactRouter(),
-        tsconfigPaths(),
+        tsconfigPaths({
+            ignoreConfigErrors: true,
+            skip: (dir) => dir.includes('/template'),
+        }),
         vanillaExtractPlugin(),
         babel({
             babelConfig: {
