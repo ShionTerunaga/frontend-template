@@ -118,11 +118,17 @@ function createReleaseEntry(filePath: string): ReleaseEntry | null {
     return null;
   }
 
+  const technologyName = metadata.packageName
+    .replace(/^@/, "")
+    .replace(/\//g, "-")
+    .replace(/^apps-/, "")
+    .replace(/^react-/, "");
+
   return {
     packageName: metadata.packageName,
     packageVersion: metadata.packageVersion,
     releaseName: `${metadata.packageName} v${metadata.packageVersion}`,
-    tagName: `${metadata.packageName}@${metadata.packageVersion}`,
+    tagName: `${technologyName}-v${metadata.packageVersion}`,
     notes,
   };
 }
