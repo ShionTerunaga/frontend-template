@@ -12,4 +12,5 @@ export const ignores = [
   ".turbo",
   "next-env.d.ts",
   "CHANGELOG.md",
+  ".eslintcache",
 ];
