@@ -4,12 +4,18 @@ type ReleaseResponse = {
   id: number;
 };
 
+type ReleaseEntry = {
+  packageName: string;
+  packageVersion: string;
+  releaseName: string;
+  tagName: string;
+  notes: string;
+};
+
 const token = process.env.GITHUB_TOKEN;
 const repository = process.env.GITHUB_REPOSITORY;
 const targetCommitish = process.env.GITHUB_SHA;
-const notesPath = process.env.NOTES_PATH;
-const tagName = process.env.TAG_NAME;
-const releaseName = process.env.RELEASE_NAME;
+const manifestPath = process.env.MANIFEST_PATH;
 
 if (!token) {
   throw new Error("GITHUB_TOKEN is required.");
@@ -23,8 +29,8 @@ if (!targetCommitish) {
   throw new Error("GITHUB_SHA is required.");
 }
 
-if (!notesPath || !tagName || !releaseName) {
-  throw new Error("NOTES_PATH, TAG_NAME, and RELEASE_NAME are required.");
+if (!manifestPath) {
+  throw new Error("MANIFEST_PATH is required.");
 }
 
 const [owner, repo] = repository.split("/");
@@ -33,7 +39,11 @@ if (!owner || !repo) {
   throw new Error(`Invalid GITHUB_REPOSITORY: ${repository}`);
 }
 
-const body = readFileSync(notesPath, "utf8");
+const releases = JSON.parse(readFileSync(manifestPath, "utf8")) as ReleaseEntry[];
+
+if (!Array.isArray(releases)) {
+  throw new Error("Release manifest must be an array.");
+}
 
 async function githubRequest<T>(
   path: string,
@@ -74,46 +84,54 @@ async function githubRequest<T>(
   return { status: response.status, data };
 }
 
-const releasePayload = {
-  tag_name: tagName,
-  target_commitish: targetCommitish,
-  name: releaseName,
-  body,
-  draft: false,
-  prerelease: false,
-};
+for (const release of releases) {
+  const releasePayload = {
+    tag_name: release.tagName,
+    target_commitish: targetCommitish,
+    name: release.releaseName,
+    body: release.notes,
+    draft: false,
+    prerelease: false,
+  };
 
-try {
-  const existing = await githubRequest<ReleaseResponse>(
-    `/repos/${owner}/${repo}/releases/tags/${encodeURIComponent(tagName)}`,
-  );
+  try {
+    const existing = await githubRequest<ReleaseResponse>(
+      `/repos/${owner}/${repo}/releases/tags/${encodeURIComponent(release.tagName)}`,
+    );
 
-  if (!existing.data) {
-    throw new Error("Expected an existing release payload.");
+    if (!existing.data) {
+      throw new Error("Expected an existing release payload.");
+    }
+
+    await githubRequest(`/repos/${owner}/${repo}/releases/${existing.data.id}`, {
+      method: "PATCH",
+      body: JSON.stringify(releasePayload),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(
+      `Updated release for ${release.packageName}@${release.packageVersion}`,
+    );
+  } catch (error) {
+    const status =
+      typeof error === "object" && error !== null && "status" in error
+        ? Number(error.status)
+        : null;
+
+    if (status !== 404) {
+      throw error;
+    }
+
+    await githubRequest(`/repos/${owner}/${repo}/releases`, {
+      method: "POST",
+      body: JSON.stringify(releasePayload),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(
+      `Created release for ${release.packageName}@${release.packageVersion}`,
+    );
   }
-
-  await githubRequest(`/repos/${owner}/${repo}/releases/${existing.data.id}`, {
-    method: "PATCH",
-    body: JSON.stringify(releasePayload),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-} catch (error) {
-  const status =
-    typeof error === "object" && error !== null && "status" in error
-      ? Number(error.status)
-      : null;
-
-  if (status !== 404) {
-    throw error;
-  }
-
-  await githubRequest(`/repos/${owner}/${repo}/releases`, {
-    method: "POST",
-    body: JSON.stringify(releasePayload),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
 }

@@ -10,6 +10,18 @@ const notesPath = resolve(
   process.env.RUNNER_TEMP || "/tmp",
   "frontend-template-release-notes.md",
 );
+const manifestPath = resolve(
+  process.env.RUNNER_TEMP || "/tmp",
+  "frontend-template-release-manifest.json",
+);
+
+type ReleaseEntry = {
+  packageName: string;
+  packageVersion: string;
+  releaseName: string;
+  tagName: string;
+  notes: string;
+};
 
 function runGit(args: string[]): string {
   return execFileSync("git", args, { encoding: "utf8" }).trim();
@@ -69,13 +81,63 @@ function extractLatestSection(filePath: string): string | null {
   return `${heading}\n\n${section}`;
 }
 
+function getPackageMetadata(filePath: string): {
+  packageName: string;
+  packageVersion: string;
+} | null {
+  const packageJsonPath = resolve(dirname(filePath), "package.json");
+
+  if (!existsSync(packageJsonPath)) {
+    return null;
+  }
+
+  try {
+    const pkg = JSON.parse(readFileSync(packageJsonPath, "utf8")) as {
+      name?: string;
+      version?: string;
+    };
+
+    if (!pkg.name || !pkg.version) {
+      return null;
+    }
+
+    return {
+      packageName: pkg.name,
+      packageVersion: pkg.version,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function createReleaseEntry(filePath: string): ReleaseEntry | null {
+  const metadata = getPackageMetadata(filePath);
+  const notes = extractLatestSection(filePath);
+
+  if (!metadata || !notes) {
+    return null;
+  }
+
+  return {
+    packageName: metadata.packageName,
+    packageVersion: metadata.packageVersion,
+    releaseName: `${metadata.packageName} v${metadata.packageVersion}`,
+    tagName: `${metadata.packageName}@${metadata.packageVersion}`,
+    notes,
+  };
+}
+
 const changelogFiles = getChangedFiles()
   .filter((file) => file === "CHANGELOG.md" || file.endsWith("/CHANGELOG.md"))
   .sort();
 
-const sections = changelogFiles
-  .map((file) => extractLatestSection(file))
-  .filter((section): section is string => Boolean(section));
+const releases = changelogFiles
+  .map((file) => createReleaseEntry(file))
+  .filter((entry): entry is ReleaseEntry => Boolean(entry));
+
+const sections = releases.map(
+  (release) => `${release.notes}\n\nTag: \`${release.tagName}\``,
+);
 
 const notes = sections.length
   ? sections.join("\n\n---\n\n")
@@ -83,13 +145,13 @@ const notes = sections.length
 
 mkdirSync(dirname(notesPath), { recursive: true });
 writeFileSync(notesPath, `${notes}\n`, "utf8");
+writeFileSync(manifestPath, `${JSON.stringify(releases, null, 2)}\n`, "utf8");
 
 if (process.env.GITHUB_OUTPUT) {
   const output = [
-    `has_notes=${sections.length > 0 ? "true" : "false"}`,
+    `has_releases=${releases.length > 0 ? "true" : "false"}`,
     `notes_path=${notesPath}`,
-    `tag_name=release-${after.slice(0, 7)}`,
-    `release_name=Release ${after.slice(0, 7)}`,
+    `manifest_path=${manifestPath}`,
   ].join("\n");
 
   writeFileSync(process.env.GITHUB_OUTPUT, `${output}\n`, { flag: "a" });

@@ -22,12 +22,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
-      - name: Sync release branch to merged release PR commit
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.6.3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure git author
         run: |
-          git fetch origin "${{ github.event.pull_request.merge_commit_sha }}"
-          git push origin "${{ github.event.pull_request.merge_commit_sha }}:refs/heads/release" --force
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Refresh templates from apps
+        run: pnpm copy:template
+
+      - name: Commit generated template updates to main
+        run: |
+          if [ -z "$(git status --short -- template)" ]; then
+            echo "No generated template updates."
+            exit 0
+          fi
+
+          git add template
+          git commit -m "chore: sync templates after release merge"
+          git push origin HEAD:main
+
+      - name: Sync release branch to latest main
+        run: |
+          git fetch origin main
+          git push origin origin/main:refs/heads/release --force

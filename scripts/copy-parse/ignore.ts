@@ -11,4 +11,5 @@ export const ignores = [
   "build",
   ".turbo",
   "next-env.d.ts",
+  "CHANGELOG.md",
 ];
