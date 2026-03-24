@@ -1,0 +1,33 @@
+name: Sync Release Branch
+
+on:
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-release-branch
+  cancel-in-progress: true
+
+jobs:
+  sync-release:
+    if: >
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'changeset-release/')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync release branch to merged release PR commit
+        run: |
+          git fetch origin "${{ github.event.pull_request.merge_commit_sha }}"
+          git push origin "${{ github.event.pull_request.merge_commit_sha }}:refs/heads/release" --force
