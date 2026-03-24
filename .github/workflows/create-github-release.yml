@@ -30,54 +30,13 @@ jobs:
 
       - name: Build release notes from changelogs
         id: notes
-        run: node ./scripts/release-notes/extract-release-notes.mjs "${{ github.event.before }}" "${{ github.sha }}"
+        run: node --experimental-strip-types ./scripts/release-notes/extract-release-notes.ts "${{ github.event.before }}" "${{ github.sha }}"
 
       - name: Create or update GitHub Release
         if: steps.notes.outputs.has_notes == 'true'
-        uses: actions/github-script@v7
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NOTES_PATH: ${{ steps.notes.outputs.notes_path }}
           TAG_NAME: ${{ steps.notes.outputs.tag_name }}
           RELEASE_NAME: ${{ steps.notes.outputs.release_name }}
-        with:
-          script: |
-            const fs = require("node:fs");
-            const { owner, repo } = context.repo;
-            const tag = process.env.TAG_NAME;
-            const name = process.env.RELEASE_NAME;
-            const body = fs.readFileSync(process.env.NOTES_PATH, "utf8");
-
-            try {
-              const existing = await github.rest.repos.getReleaseByTag({
-                owner,
-                repo,
-                tag,
-              });
-
-              await github.rest.repos.updateRelease({
-                owner,
-                repo,
-                release_id: existing.data.id,
-                tag_name: tag,
-                target_commitish: context.sha,
-                name,
-                body,
-                draft: false,
-                prerelease: false,
-              });
-            } catch (error) {
-              if (error.status !== 404) {
-                throw error;
-              }
-
-              await github.rest.repos.createRelease({
-                owner,
-                repo,
-                tag_name: tag,
-                target_commitish: context.sha,
-                name,
-                body,
-                draft: false,
-                prerelease: false,
-              });
-            }
+        run: node --experimental-strip-types ./scripts/release-notes/create-github-release.ts

@@ -11,11 +11,11 @@ const notesPath = resolve(
   "frontend-template-release-notes.md",
 );
 
-function runGit(args) {
+function runGit(args: string[]): string {
   return execFileSync("git", args, { encoding: "utf8" }).trim();
 }
 
-function getChangedFiles() {
+function getChangedFiles(): string[] {
   if (!before) {
     return runGit(["show", "--pretty=", "--name-only", after])
       .split(/\r?\n/)
@@ -27,7 +27,7 @@ function getChangedFiles() {
     .filter(Boolean);
 }
 
-function getPackageHeading(filePath, content) {
+function getPackageHeading(filePath: string, content: string): string {
   const firstHeading = content.match(/^# .+$/m)?.[0];
   if (firstHeading) {
     return firstHeading;
@@ -36,7 +36,9 @@ function getPackageHeading(filePath, content) {
   const packageJsonPath = resolve(dirname(filePath), "package.json");
   if (existsSync(packageJsonPath)) {
     try {
-      const pkg = JSON.parse(readFileSync(packageJsonPath, "utf8"));
+      const pkg = JSON.parse(readFileSync(packageJsonPath, "utf8")) as {
+        name?: string;
+      };
       if (pkg.name) {
         return `# ${pkg.name}`;
       }
@@ -48,7 +50,7 @@ function getPackageHeading(filePath, content) {
   return `# ${basename(dirname(filePath))}`;
 }
 
-function extractLatestSection(filePath) {
+function extractLatestSection(filePath: string): string | null {
   const content = readFileSync(filePath, "utf8");
   const lines = content.split(/\r?\n/);
   const startIndex = lines.findIndex((line) => /^## /.test(line));
@@ -73,7 +75,7 @@ const changelogFiles = getChangedFiles()
 
 const sections = changelogFiles
   .map((file) => extractLatestSection(file))
-  .filter(Boolean);
+  .filter((section): section is string => Boolean(section));
 
 const notes = sections.length
   ? sections.join("\n\n---\n\n")
