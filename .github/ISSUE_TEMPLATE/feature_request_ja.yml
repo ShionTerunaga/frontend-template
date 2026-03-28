@@ -16,7 +16,8 @@ body:
       attributes:
           label: 概要
           description: 要望する機能を一文で簡潔に書いてください。
-          placeholder: 例: "プロンプトをスキップする CLI オプションを追加したい"
+          placeholder: |
+              例: "プロンプトをスキップする CLI オプションを追加したい"
       validations:
           required: true
     - type: textarea
@@ -31,7 +32,8 @@ body:
       attributes:
           label: 提案する解決策
           description: 実装案や API の変更案があれば記載してください。
-          placeholder: 例: "`-n/--name` と `-f/--framework` オプションを CLI に追加する"
+          placeholder: |
+              例: "`-n/--name` と `-f/--framework` オプションを CLI に追加する"
     - type: textarea
       id: alternatives
       attributes:
@@ -42,7 +44,8 @@ body:
       attributes:
           label: 影響範囲
           description: 後方互換性、テスト、テンプレートなど、影響しそうな箇所を書いてください。
-          placeholder: 例: "後方互換性あり。オプション追加のみ"
+          placeholder: |
+              例: "後方互換性あり。オプション追加のみ"
     - type: textarea
       id: additional
       attributes:

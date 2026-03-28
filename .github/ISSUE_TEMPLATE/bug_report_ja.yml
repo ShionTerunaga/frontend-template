@@ -16,7 +16,8 @@ body:
       attributes:
           label: 概要
           description: バグの内容を一文で簡潔に書いてください。
-          placeholder: 例: "createApp 実行時に TypeError が発生する"
+          placeholder: |
+              例: "createApp 実行時に TypeError が発生する"
       validations:
           required: true
     - type: textarea
@@ -35,19 +36,22 @@ body:
       attributes:
           label: 期待する動作
           description: 本来どのような結果になるべきかを書いてください。
-          placeholder: 例: "プロジェクトが正常にビルドされ、テストが通る"
+          placeholder: |
+              例: "プロジェクトが正常にビルドされ、テストが通る"
     - type: textarea
       id: actual
       attributes:
           label: 実際の動作
           description: 実際に起きたことを、エラーメッセージやスタックトレースを含めて記載してください。
-          placeholder: エラーログやスタックトレースをここに貼ってください。
+          placeholder: |
+              エラーログやスタックトレースをここに貼ってください。
     - type: input
       id: environment
       attributes:
           label: 環境情報
           description: OS、Node.js の version、pnpm の version など、関連する環境情報を書いてください。
-          placeholder: 例: "macOS 14.0, Node 20.10.0, pnpm 8.0.0"
+          placeholder: |
+              例: "macOS 14.0, Node 20.10.0, pnpm 8.0.0"
     - type: textarea
       id: additional
       attributes:
