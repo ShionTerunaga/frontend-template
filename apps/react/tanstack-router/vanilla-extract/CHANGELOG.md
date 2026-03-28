@@ -1,5 +1,11 @@
 # @apps/react-tanstack-router-vanilla-extract
 
+## 1.0.1
+
+### Patch Changes
+
+- [`108e2c2`](https://github.com/ShionTerunaga/frontend-template/commit/108e2c2d8cb3794aec9eca43a7cdd36b98165691) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - remove `baseUrl`
+
 ## 1.0.0
 
 ### Major Changes

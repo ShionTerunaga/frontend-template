@@ -1,5 +1,13 @@
 # @apps/vue-nuxt-scoped-css
 
+## 1.0.1
+
+### Patch Changes
+
+- [`596a1c0`](https://github.com/ShionTerunaga/frontend-template/commit/596a1c006746bf5cd45c69f9d9cda691a531dfb2)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Fix the import
+  error
+
 ## 1.0.0
 
 ### Major Changes
