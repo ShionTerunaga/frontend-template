@@ -64,7 +64,15 @@ async function githubRequest<T>(
   }
 
   const text = await response.text();
-  const data = text ? (JSON.parse(text) as T) : null;
+  let data: T | { message?: string } | null = null;
+
+  if (text) {
+    try {
+      data = JSON.parse(text) as T;
+    } catch {
+      data = { message: text };
+    }
+  }
 
   if (!response.ok) {
     const message =
@@ -78,10 +86,45 @@ async function githubRequest<T>(
     throw Object.assign(new Error(message), {
       status: response.status,
       data,
+      path,
+      method: init.method ?? "GET",
     });
   }
 
-  return { status: response.status, data };
+  return { status: response.status, data: data as T | null };
+}
+
+async function githubRequestWithRetry<T>(
+  path: string,
+  init: RequestInit = {},
+  retries = 3,
+): Promise<{ status: number; data: T | null }> {
+  let attempt = 0;
+
+  while (true) {
+    try {
+      return await githubRequest<T>(path, init);
+    } catch (error) {
+      attempt += 1;
+
+      const status =
+        typeof error === "object" && error !== null && "status" in error
+          ? Number(error.status)
+          : null;
+
+      const shouldRetry = status !== null && status >= 500 && attempt < retries;
+
+      if (!shouldRetry) {
+        throw error;
+      }
+
+      const waitMs = attempt * 1000;
+      console.warn(
+        `GitHub API ${status} on ${init.method ?? "GET"} ${path}. Retrying in ${waitMs}ms...`,
+      );
+      await new Promise((resolve) => setTimeout(resolve, waitMs));
+    }
+  }
 }
 
 for (const release of releases) {
@@ -95,7 +138,7 @@ for (const release of releases) {
   };
 
   try {
-    const existing = await githubRequest<ReleaseResponse>(
+    const existing = await githubRequestWithRetry<ReleaseResponse>(
       `/repos/${owner}/${repo}/releases/tags/${encodeURIComponent(release.tagName)}`,
     );
 
@@ -103,13 +146,16 @@ for (const release of releases) {
       throw new Error("Expected an existing release payload.");
     }
 
-    await githubRequest(`/repos/${owner}/${repo}/releases/${existing.data.id}`, {
-      method: "PATCH",
-      body: JSON.stringify(releasePayload),
-      headers: {
-        "Content-Type": "application/json",
+    await githubRequestWithRetry(
+      `/repos/${owner}/${repo}/releases/${existing.data.id}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(releasePayload),
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     console.log(
       `Updated release for ${release.packageName}@${release.packageVersion}`,
     );
@@ -120,10 +166,26 @@ for (const release of releases) {
         : null;
 
     if (status !== 404) {
+      console.error(
+        `Failed to upsert release ${release.tagName}:`,
+        JSON.stringify(
+          {
+            status,
+            message: error instanceof Error ? error.message : String(error),
+            details:
+              typeof error === "object" && error !== null && "data" in error
+                ? error.data
+                : null,
+          },
+          null,
+          2,
+        ),
+      );
       throw error;
     }
 
-    await githubRequest(`/repos/${owner}/${repo}/releases`, {
+    console.log(`Creating release for ${release.tagName}...`);
+    await githubRequestWithRetry(`/repos/${owner}/${repo}/releases`, {
       method: "POST",
       body: JSON.stringify(releasePayload),
       headers: {
