@@ -65,5 +65,20 @@
     "@commitlint/config-conventional": "^19.8.1",
     "lefthook": "^1.11.13",
     "turbo": "^2.5.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "brace-expansion@1.1.12": "1.1.13",
+      "brace-expansion@2.0.1": "2.0.3",
+      "brace-expansion@2.0.2": "2.0.3",
+      "brace-expansion@5.0.4": "5.0.5",
+      "node-forge": "1.4.0",
+      "path-to-regexp": "0.1.13",
+      "picomatch@2.3.1": "2.3.2",
+      "picomatch@4.0.3": "4.0.4",
+      "serialize-javascript": "7.0.5",
+      "srvx": "0.11.13",
+      "yaml": "2.8.3"
+    }
   }
 }
