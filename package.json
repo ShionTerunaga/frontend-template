@@ -53,6 +53,7 @@
     "create:env": "node --experimental-strip-types ./scripts/create-env/create-env.ts",
     "clean:workspace": "node --experimental-strip-types ./scripts/clean-workspace.ts",
     "reinstall:all": "pnpm run clean:workspace && pnpm install",
+    "reset:install": "pnpm run clean:workspace && pnpm install",
     "doctor:deps": "node --experimental-strip-types ./scripts/verify-workspace-installs.ts",
     "check": "pnpm lint && pnpm test && pnpm typecheck",
     "version:packages": "changeset version",

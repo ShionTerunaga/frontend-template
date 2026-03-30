@@ -2,9 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const rootDir = process.cwd();
-const appsDir = path.join(rootDir, "apps");
-
-const ignoredDirs = new Set<string>([".git", ".next", ".nuxt", ".output", "dist", "coverage"]);
+const rootLockfile = path.join(rootDir, "pnpm-lock.yaml");
+const ignoredDirs = new Set<string>([".git"]);
 let removedNodeModules = 0;
 let removedLockfiles = 0;
 
@@ -27,16 +26,14 @@ function walk(dir: string): void {
             continue;
         }
 
-        if (entry.isFile() && entry.name === "pnpm-lock.yaml") {
+        if (entry.isFile() && entry.name === "pnpm-lock.yaml" && fullPath !== rootLockfile) {
             fs.rmSync(fullPath, { force: true });
             removedLockfiles += 1;
         }
     }
 }
 
-if (fs.existsSync(appsDir)) {
-    walk(appsDir);
-}
+walk(rootDir);
 
-console.log(`Removed ${removedNodeModules} app node_modules directories`);
+console.log(`Removed ${removedNodeModules} node_modules directories`);
 console.log(`Removed ${removedLockfiles} nested pnpm-lock.yaml files`);
