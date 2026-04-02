@@ -1,7 +1,7 @@
 import * as v from "valibot";
 
 export const APIScheme = v.array(
-    v.object({
+    v.strictObject({
             id: v.string(),
             name: v.string(),
             alternate_names: v.array(v.string()),
