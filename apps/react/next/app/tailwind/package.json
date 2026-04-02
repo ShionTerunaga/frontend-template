@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build --webpack",
+        "build": "next build",
         "start": "next start",
         "lint": "eslint",
         "typecheck": "tsc --noEmit",
@@ -14,8 +14,6 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "@storybook/addon-styling-webpack": "^3.0.0",
-        "@storybook/nextjs": "10.2.10",
         "@testing-library/react": "^16.3.0",
         "@testing-library/user-event": "^14.6.1",
         "@vitejs/plugin-react": "^5.1.0",
@@ -33,6 +31,8 @@
         "zod": "^4.1.12"
     },
     "devDependencies": {
+        "@storybook/addon-styling-webpack": "^3.0.0",
+        "@storybook/nextjs": "10.2.10",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20",
         "@types/react": "^19",

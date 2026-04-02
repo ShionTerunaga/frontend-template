@@ -13,4 +13,5 @@ export const ignores = [
   "next-env.d.ts",
   "CHANGELOG.md",
   ".eslintcache",
+  "storybook-static",
 ];
