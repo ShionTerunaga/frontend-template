@@ -57,7 +57,8 @@ for (const project of projects) {
         {
             cwd: process.cwd(),
             encoding: "utf8",
-            maxBuffer: 1024 * 1024 * 20
+            maxBuffer: 1024 * 1024 * 20,
+            shell: true
         }
     );
 
