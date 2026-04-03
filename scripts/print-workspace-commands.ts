@@ -1,9 +1,10 @@
 import { workspaceProjects } from "./workspace-projects.ts";
 
 const task = process.argv[2];
+const allowedTasks = ["dev", "build", "test", "storybook", "build-storybook"];
 
-if (!task || !["dev", "build", "test"].includes(task)) {
-    console.error("Usage: node --experimental-strip-types ./scripts/print-workspace-commands.ts <dev|build|test>");
+if (!task || !allowedTasks.includes(task)) {
+    console.error("Usage: node --experimental-strip-types ./scripts/print-workspace-commands.ts <dev|build|test|storybook|build-storybook>");
     process.exit(1);
 }
 
