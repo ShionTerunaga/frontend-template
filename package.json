@@ -85,7 +85,7 @@
     "doctor:deps": "node --experimental-strip-types ./scripts/verify-workspace-installs.ts",
     "check": "pnpm lint && pnpm test && pnpm typecheck",
     "version:packages": "changeset version",
-    "prepare": "sh -c 'if [ -d .git ]; then lefthook install; else echo \"Skipping lefthook install: .git directory not found\"; fi'"
+    "prepare": "node -e \"const { existsSync } = require('node:fs'); const { spawnSync } = require('node:child_process'); if (existsSync('.git')) { const cmd = process.platform === 'win32' ? 'lefthook.cmd' : 'lefthook'; const result = spawnSync(cmd, ['install'], { stdio: 'inherit', shell: true }); process.exit(result.status ?? 1); } else { console.log('Skipping lefthook install: .git directory not found'); }\""
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.6.0",
