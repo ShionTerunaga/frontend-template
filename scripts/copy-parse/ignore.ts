@@ -14,4 +14,6 @@ export const ignores = [
   "CHANGELOG.md",
   ".eslintcache",
   "storybook-static",
+  "debug-storybook.log",
+  "tsconfig.tsbuildinfo",
 ];

@@ -6,6 +6,11 @@ pre-commit:
     test:
       run: pnpm test
 
+post-merge:
+  commands:
+    install-deps:
+      run: pnpm install
+
 commit-msg:
   commands:
     commitlint:

@@ -3,7 +3,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { workspaceProjects, type WorkspaceProject } from "./workspace-projects.ts";
 
-type TaskName = "build" | "test";
+type TaskName = "build" | "test" | "build-storybook";
 
 const ansi = {
     reset: "\u001b[0m",
@@ -22,8 +22,8 @@ function colorize(text: string, ...styles: string[]): string {
 const task = process.argv[2] as TaskName | undefined;
 const target = process.argv[3];
 
-if (!task || !target || !["build", "test"].includes(task)) {
-    console.error("Usage: node --experimental-strip-types ./scripts/run-workspace-task.ts <build|test> <alias|all>");
+if (!task || !target || !["build", "test", "build-storybook"].includes(task)) {
+    console.error("Usage: node --experimental-strip-types ./scripts/run-workspace-task.ts <build|test|build-storybook> <alias|all>");
     process.exit(1);
 }
 

@@ -3,6 +3,9 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     components: [{ path: "~/app/components", extensions: ["vue"] }],
+    storybook: {
+        enabled: process.env.NUXT_STORYBOOK_ENABLED === "true"
+    },
     vite: {
         plugins: [vanillaExtractPlugin()]
     },
@@ -13,5 +16,5 @@ export default defineNuxtConfig({
         }
     },
 
-    modules: ["@nuxt/image"]
+    modules: ["@nuxt/image", "@nuxtjs/storybook"]
 });
