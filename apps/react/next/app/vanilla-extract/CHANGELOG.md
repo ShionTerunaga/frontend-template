@@ -1,5 +1,21 @@
 # @apps/react-next-app-vanilla-extract
 
+## 2.0.0
+
+### Major Changes
+
+- [#9](https://github.com/ShionTerunaga/frontend-template/pull/9)
+  [`b25aa77`](https://github.com/ShionTerunaga/frontend-template/commit/b25aa77e47159589413b75ed3de12d3de592ea0a)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changed from
+  `zod` to `valibot`
+
+### Minor Changes
+
+- [#7](https://github.com/ShionTerunaga/frontend-template/pull/7)
+  [`e636888`](https://github.com/ShionTerunaga/frontend-template/commit/e636888d06bb7dfe5b3c9a4d85ea821d2dd92b66)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Builds with
+  Turbopack are now supported for `vanilla-extract`
+
 ## 1.0.1
 
 ### Patch Changes
