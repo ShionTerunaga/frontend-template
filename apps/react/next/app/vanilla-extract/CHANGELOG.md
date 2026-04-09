@@ -1,5 +1,14 @@
 # @apps/react-next-app-vanilla-extract
 
+## 2.0.1
+
+### Patch Changes
+
+- [`5f8491d`](https://github.com/ShionTerunaga/frontend-template/commit/5f8491d1510bc7c9cc48d52628338f7e2320b6b0)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Update the
+  Next.js templates to `16.2.3` and align `eslint-config-next` with the same
+  release.
+
 ## 2.0.0
 
 ### Major Changes
