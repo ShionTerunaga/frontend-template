@@ -1,5 +1,13 @@
 # @apps/vue-nuxt-scoped-css
 
+## 2.0.1
+
+### Patch Changes
+
+- [`cfa656c`](https://github.com/ShionTerunaga/frontend-template/commit/cfa656c7768719e74e2a9c27284becbab4e0615f)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - I've updated the
+  dependencies so that it works with npm as well.
+
 ## 2.0.0
 
 ### Major Changes
