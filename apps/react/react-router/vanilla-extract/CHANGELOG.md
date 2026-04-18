@@ -1,5 +1,11 @@
 # @apps/react-react-router-vanilla-extract
 
+## 2.0.1
+
+### Patch Changes
+
+- [`3730e5d`](https://github.com/ShionTerunaga/frontend-template/commit/3730e5d1f5f654bdaffad413c88b9a9eed251b90) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Upgrading dependencies
+
 ## 2.0.0
 
 ### Major Changes
