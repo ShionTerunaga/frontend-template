@@ -33,8 +33,8 @@
         "vitest": "^4.1.0"
     },
     "devDependencies": {
-        "@storybook/addon-styling-webpack": "^3.0.0",
-        "@storybook/nextjs": "^10.2.10",
+        "@storybook/addon-styling-webpack": "^3.0.2",
+        "@storybook/nextjs": "^10.3.5",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
@@ -45,7 +45,7 @@
         "eslint-config-next": "16.2.3",
         "eslint-plugin-storybook": "^10.0.0",
         "jsdom": "^26.1.0",
-        "storybook": "^10.2.10",
+        "storybook": "^10.3.5",
         "typescript": "^5"
     }
 }

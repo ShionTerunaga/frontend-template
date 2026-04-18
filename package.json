@@ -97,16 +97,22 @@
   },
   "pnpm": {
     "overrides": {
+      "@nuxt/vite-builder>vite": "7.3.2",
+      "@unhead/vue": "2.1.13",
       "brace-expansion@1.1.12": "1.1.13",
       "brace-expansion@2.0.1": "2.0.3",
       "brace-expansion@2.0.2": "2.0.3",
       "brace-expansion@5.0.4": "5.0.5",
+      "defu": "6.1.7",
+      "elliptic": "6.6.1",
+      "lodash": "4.18.1",
       "node-forge": "1.4.0",
       "path-to-regexp": "0.1.13",
       "picomatch@2.3.1": "2.3.2",
       "picomatch@4.0.3": "4.0.4",
       "serialize-javascript": "7.0.5",
       "srvx": "0.11.13",
+      "unhead": "2.1.13",
       "yaml": "2.8.3"
     }
   }
