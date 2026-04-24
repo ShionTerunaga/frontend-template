@@ -1,5 +1,14 @@
 # @apps/vue-nuxt-vanilla-extract
 
+## 2.0.2
+
+### Patch Changes
+
+- [#19](https://github.com/ShionTerunaga/frontend-template/pull/19)
+  [`218f17e`](https://github.com/ShionTerunaga/frontend-template/commit/218f17ef843d1612795ffb4c7ab252a8e6146f1e)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - upgrade
+  dependencies version
+
 ## 2.0.1
 
 ### Patch Changes
