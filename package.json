@@ -3,6 +3,9 @@
   "private": true,
   "packageManager": "pnpm@10.6.3",
   "scripts": {
+    "gh-init": "gh-issue init",
+    "gh-create": "gh-issue create",
+    "gh-send": "gh-issue send",
     "changeset": "changeset",
     "build": "pnpm run build:all",
     "build:list": "node --experimental-strip-types ./scripts/print-workspace-commands.ts build",
@@ -115,5 +118,8 @@
       "unhead": "2.1.13",
       "yaml": "2.8.3"
     }
+  },
+  "dependencies": {
+    "gh-issue": "github:ShionTerunaga/gh-issue#release"
   }
 }
