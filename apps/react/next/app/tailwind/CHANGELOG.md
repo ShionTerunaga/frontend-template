@@ -1,5 +1,14 @@
 # @apps/react-next-app-tailwind
 
+## 2.0.4
+
+### Patch Changes
+
+- [#24](https://github.com/ShionTerunaga/frontend-template/pull/24)
+  [`60fba72`](https://github.com/ShionTerunaga/frontend-template/commit/60fba721f2fb16a1a3c81769328c8f1a4b75ecf7)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Vulnerability
+  Response
+
 ## 2.0.3
 
 ### Patch Changes
