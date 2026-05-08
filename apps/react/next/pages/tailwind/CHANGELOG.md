@@ -1,5 +1,14 @@
 # @apps/react-next-pages-tailwind
 
+## 2.0.5
+
+### Patch Changes
+
+- [#26](https://github.com/ShionTerunaga/frontend-template/pull/26)
+  [`7cb6e53`](https://github.com/ShionTerunaga/frontend-template/commit/7cb6e53e72c562f0d3e6bffcf4142f63bf7877dc)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - upgrade version
+  of next
+
 ## 2.0.4
 
 ### Patch Changes
