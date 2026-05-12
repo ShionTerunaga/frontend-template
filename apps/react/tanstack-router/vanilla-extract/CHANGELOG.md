@@ -1,5 +1,11 @@
 # @apps/react-tanstack-router-vanilla-extract
 
+## 2.0.3
+
+### Patch Changes
+
+- [#28](https://github.com/ShionTerunaga/frontend-template/pull/28) [`84f2e90`](https://github.com/ShionTerunaga/frontend-template/commit/84f2e9056b3dc5f344edb6ec25d830683dfee677) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Security Measures
+
 ## 2.0.2
 
 ### Patch Changes
