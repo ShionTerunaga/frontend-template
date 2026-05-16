@@ -1,5 +1,11 @@
 # @apps/vue-vue-router-scoped-css
 
+## 2.0.3
+
+### Patch Changes
+
+- [#30](https://github.com/ShionTerunaga/frontend-template/pull/30) [`781cbe7`](https://github.com/ShionTerunaga/frontend-template/commit/781cbe746c79524ab71e84f8497a2662dacee85f) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Set the version of ts-shared
+
 ## 2.0.2
 
 ### Patch Changes
