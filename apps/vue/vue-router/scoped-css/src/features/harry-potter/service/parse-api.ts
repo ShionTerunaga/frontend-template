@@ -1,7 +1,7 @@
-import { resultUtility, type Result } from 'ts-shared'
+import { resultUtility, type Result } from 'ts-utility-kit'
 import type { APIRes } from '../model/model-res'
 import type { APIView } from '../model/model-view'
-import { optionUtility, type Option } from 'ts-shared'
+import { optionUtility, type Option } from 'ts-utility-kit'
 import type { FetcherError } from '@/shared/error/fetcher'
 
 export function parseApi(api: APIRes): Result<Option<Array<APIView>>, FetcherError> {

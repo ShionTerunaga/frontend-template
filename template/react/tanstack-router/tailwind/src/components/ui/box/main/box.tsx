@@ -2,7 +2,7 @@ import type { CheckerProps } from '@/shared/types/object'
 // Tailwind class variants imported from box.css.ts (converted from vanilla-extract)
 import { boxVariants } from './box.style'
 import type { CSSProperties, ElementType, ReactNode } from 'react'
-import { classMerger } from 'ts-shared'
+import { classMerger } from 'ts-utility-kit'
 
 type BoxWidth = keyof typeof boxVariants.boxWidthStyle
 type BoxHeight = keyof typeof boxVariants.boxHeightStyle

@@ -1,10 +1,10 @@
 import { appConfig } from "@/shared/config/config";
 import { APIScheme } from "../model/model-res";
 import { parseApi } from "./parse-api";
-import { Result } from "ts-shared";
+import { Result } from "ts-utility-kit";
 import { APIView } from "../model/model-view";
 import { hasParseFetcher } from "@/services/fetcher-get";
-import { Option } from "ts-shared";
+import { Option } from "ts-utility-kit";
 import { FetcherError } from "@/shared/error/fetcher";
 
 export async function getCharacter(

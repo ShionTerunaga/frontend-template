@@ -3,7 +3,7 @@ import { headingFontStyle } from './heading.css'
 import { textColor, type TextTheme } from '@/shared/theme/design-system.css'
 import type { ChildrenOnly } from '@/shared/types/react'
 import { memo, type CSSProperties, type ElementType } from 'react'
-import { classMerger } from 'ts-shared'
+import { classMerger } from 'ts-utility-kit'
 
 /**
  * HeadingFont type

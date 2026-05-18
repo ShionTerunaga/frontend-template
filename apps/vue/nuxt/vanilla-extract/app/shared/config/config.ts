@@ -1,4 +1,4 @@
-import { envParse } from "ts-shared";
+import { envParse } from "ts-utility-kit";
 
 export const appConfig = {
     get apiKey() {

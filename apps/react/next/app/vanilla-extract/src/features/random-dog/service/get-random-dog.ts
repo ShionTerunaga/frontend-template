@@ -1,11 +1,11 @@
 "use server";
 
 import { appConfig } from "@/shared/config/config";
-import { Result } from "ts-shared";
+import { Result } from "ts-utility-kit";
 import { RandomDogRes, randomDogScheme } from "../model/random-dog";
 import { parseScheme } from "./parse-scheme";
 import { hasParseFetcher } from "@/services/fetcher-get";
-import { Option } from "ts-shared";
+import { Option } from "ts-utility-kit";
 import { FetcherError } from "@/shared/error/fetcher";
 
 export async function getRandomDog(): Promise<

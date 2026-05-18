@@ -1,7 +1,7 @@
-import { resultUtility, type Result } from 'ts-shared'
+import { resultUtility, type Result } from 'ts-utility-kit'
 import type { APIView } from '../model/model-view'
-import { type Option, optionUtility } from 'ts-shared'
-import { isNull } from 'ts-shared'
+import { type Option, optionUtility } from 'ts-utility-kit'
+import { isNull } from 'ts-utility-kit'
 import type { FetcherError } from '@/shared/error/fetcher'
 import type { APIRes } from '../model/model-res'
 

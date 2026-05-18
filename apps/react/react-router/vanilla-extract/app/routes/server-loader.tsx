@@ -1,7 +1,7 @@
 import { getCharacter, type APIView } from '@/features/harry-potter'
 import type { Route } from '../+types/root'
-import type { Result } from 'ts-shared'
-import type { Option } from 'ts-shared'
+import type { Result } from 'ts-utility-kit'
+import type { Option } from 'ts-utility-kit'
 import type { FetcherError } from '@/shared/error/fetcher'
 import ServerLoaderView from '@/screen/server-loader/server-loader'
 

@@ -1,6 +1,6 @@
 import { Box, Heading } from "@/components/ui";
 import { ja } from "@/shared/lang/ja";
-import { classMerger } from "ts-shared";
+import { classMerger } from "ts-utility-kit";
 import Link from "next/link";
 
 export const metadata = {

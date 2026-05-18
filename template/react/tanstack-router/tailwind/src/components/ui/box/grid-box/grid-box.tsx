@@ -6,7 +6,7 @@ import {
 } from './grid-box.style'
 import { type CheckerProps } from '@/shared/types/object'
 import { Box } from '../main/box'
-import { classMerger } from 'ts-shared'
+import { classMerger } from 'ts-utility-kit'
 
 interface Props extends ChildrenOnly {
     gap?: keyof typeof gridBoxGap
