@@ -59,7 +59,7 @@ importers:
     dependencies:
       gh-issue:
         specifier: github:ShionTerunaga/gh-issue#release
-        version: https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/be36dc7ce7ddcedcda89dfa957b276c321a7a1f2
+        version: https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/b0ad4e8e235f3cfe8e45712fa8418bd37b9c9d78
     devDependencies:
       '@changesets/changelog-github':
         specifier: ^0.6.0
@@ -760,58 +760,6 @@ importers:
         version: 27.4.0
       nuxt:
         specifier: ^4.4.4
-        version: 4.4.4(@babel/core@7.29.0)(@babel/plugin-proposal-decorators@7.29.0(@babel/core@7.29.0))(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@24.12.0)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.4(jiti@2.6.1))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(oxlint@1.29.0)(rolldown@1.0.0-rc.15)(rollup-plugin-visualizer@7.0.1(rolldown@1.0.0-rc.15)(rollup@4.60.3))(rollup@4.60.3)(terser@5.46.1)(tsx@4.21.0)(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-tsc@3.2.7(typescript@5.9.3))(yaml@2.8.3)
-      simple-git:
-        specifier: ^3.36.0
-        version: 3.36.0
-      ts-utility-kit:
-        specifier: 1.4.0
-        version: 1.4.0
-      valibot:
-        specifier: ^1.3.1
-        version: 1.3.1(typescript@5.9.3)
-      vite:
-        specifier: ^8.0.5
-        version: 8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
-      vitest:
-        specifier: ^4.1.0
-        version: 4.1.0(@types/node@24.12.0)(jsdom@27.4.0)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-      vue:
-        specifier: ^3.5.33
-        version: 3.5.33(typescript@5.9.3)
-      vue-router:
-        specifier: ^5.0.6
-        version: 5.0.6(@vue/compiler-sfc@3.5.33)(vue@3.5.33(typescript@5.9.3))
-    devDependencies:
-      '@nuxtjs/storybook':
-        specifier: ^9.0.1
-        version: 9.0.1(bf787bc67e1e3bccf2dd648543185cf6)
-      cross-env:
-        specifier: ^10.1.0
-        version: 10.1.0
-      storybook:
-        specifier: ^9.1.20
-        version: 9.1.20(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
-
-  apps/vue/nuxt/vanilla-extract:
-    dependencies:
-      '@nuxt/image':
-        specifier: 2.0.0
-        version: 2.0.0(db0@0.3.4)(ioredis@5.10.1)(magicast@0.5.2)
-      '@vanilla-extract/css':
-        specifier: ^1.18.0
-        version: 1.20.0
-      '@vanilla-extract/vite-plugin':
-        specifier: ^5.1.4
-        version: 5.2.1(@types/node@24.12.0)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(yaml@2.8.3)
-      csstype:
-        specifier: ^3.2.3
-        version: 3.2.3
-      jsdom:
-        specifier: ^27.4.0
-        version: 27.4.0
-      nuxt:
-        specifier: ^4.4.4
         version: 4.4.4(@babel/core@7.29.0)(@babel/plugin-proposal-decorators@7.29.0(@babel/core@7.29.0))(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@24.12.0)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.4(jiti@2.6.1))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(oxlint@1.29.0)(rolldown@1.0.0-rc.15)(rollup-plugin-visualizer@7.0.1(rolldown@1.0.0-rc.15)(rollup@4.60.3))(rollup@4.60.3)(terser@5.46.1)(tsx@4.21.0)(typescript@6.0.3)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-tsc@3.2.7(typescript@6.0.3))(yaml@2.8.3)
       simple-git:
         specifier: ^3.36.0
@@ -844,6 +792,58 @@ importers:
       storybook:
         specifier: ^9.1.20
         version: 9.1.20(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+
+  apps/vue/nuxt/vanilla-extract:
+    dependencies:
+      '@nuxt/image':
+        specifier: 2.0.0
+        version: 2.0.0(db0@0.3.4)(ioredis@5.10.1)(magicast@0.5.2)
+      '@vanilla-extract/css':
+        specifier: ^1.18.0
+        version: 1.20.0
+      '@vanilla-extract/vite-plugin':
+        specifier: ^5.1.4
+        version: 5.2.1(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(yaml@2.8.3)
+      csstype:
+        specifier: ^3.2.3
+        version: 3.2.3
+      jsdom:
+        specifier: ^27.4.0
+        version: 27.4.0
+      nuxt:
+        specifier: ^4.4.4
+        version: 4.4.4(@babel/core@7.29.0)(@babel/plugin-proposal-decorators@7.29.0(@babel/core@7.29.0))(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@24.12.0)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(eslint@9.39.4(jiti@2.6.1))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(oxlint@1.29.0)(rolldown@1.0.0-rc.15)(rollup-plugin-visualizer@7.0.1(rolldown@1.0.0-rc.15)(rollup@4.60.3))(rollup@4.60.3)(terser@5.46.1)(tsx@4.21.0)(typescript@5.9.3)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(vue-tsc@3.2.7(typescript@5.9.3))(yaml@2.8.3)
+      simple-git:
+        specifier: ^3.36.0
+        version: 3.36.0
+      ts-utility-kit:
+        specifier: 1.4.0
+        version: 1.4.0
+      valibot:
+        specifier: ^1.3.1
+        version: 1.3.1(typescript@5.9.3)
+      vite:
+        specifier: ^8.0.5
+        version: 8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+      vitest:
+        specifier: ^4.1.0
+        version: 4.1.0(@types/node@24.12.0)(jsdom@27.4.0)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
+      vue:
+        specifier: ^3.5.33
+        version: 3.5.33(typescript@5.9.3)
+      vue-router:
+        specifier: ^5.0.6
+        version: 5.0.6(@vue/compiler-sfc@3.5.33)(vue@3.5.33(typescript@5.9.3))
+    devDependencies:
+      '@nuxtjs/storybook':
+        specifier: ^9.0.1
+        version: 9.0.1(bf787bc67e1e3bccf2dd648543185cf6)
+      cross-env:
+        specifier: ^10.1.0
+        version: 10.1.0
+      storybook:
+        specifier: ^9.1.20
+        version: 9.1.20(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
 
   apps/vue/vue-router/scoped-css:
     dependencies:
@@ -7098,9 +7098,9 @@ packages:
   get-tsconfig@4.13.6:
     resolution: {integrity: sha512-shZT/QMiSHc/YBLxxOkMtgSid5HFoauqCE3/exfsEcwg1WkeqjG+V40yBbBrsD+jW2HDXcs28xOfcbm2jI8Ddw==}
 
-  gh-issue@https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/be36dc7ce7ddcedcda89dfa957b276c321a7a1f2:
-    resolution: {tarball: https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/be36dc7ce7ddcedcda89dfa957b276c321a7a1f2}
-    version: 0.6.0
+  gh-issue@https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/b0ad4e8e235f3cfe8e45712fa8418bd37b9c9d78:
+    resolution: {tarball: https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/b0ad4e8e235f3cfe8e45712fa8418bd37b9c9d78}
+    version: 0.8.0
     engines: {node: '>=20'}
     hasBin: true
 
@@ -9568,6 +9568,12 @@ packages:
     peerDependencies:
       seroval: ^1.0
 
+  seroval-plugins@1.5.4:
+    resolution: {integrity: sha512-S0xQPhUTefAhNvNWFg0c1J8qJArHt5KdtJ/cFAofo06KD1MVSeFWyl4iiu+ApDIuw0WhjpOfCdgConOfAnLgkw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      seroval: ^1.0
+
   seroval@1.5.4:
     resolution: {integrity: sha512-46uFvgrXTVxZcUorgSSRZ4y+ieqLLQRMlG4bnCZKW3qI6BZm7Rg4ntMW4p1mILEEBZWrFlcpp0AyIIlM6jD9iw==}
     engines: {node: '>=10'}
@@ -10099,11 +10105,6 @@ packages:
 
   ts-utility-kit@1.4.0:
     resolution: {integrity: sha512-XvJBXypmnIKTmOgQRVsH3Lx45JO1nGw0iRmLQHd4P67fAzgNtm0IwRXpT/X9fi1lnDRmjNjwa9dQyEC9D2rjzQ==}
-    engines: {node: '>=22.12.0'}
-
-  ts-utility-kit@git+https://github.com/ShionTerunaga/ts-shared.git#73744aebea9fa22ff0b8500aa42a758d77f874e3:
-    resolution: {commit: 73744aebea9fa22ff0b8500aa42a758d77f874e3, repo: https://github.com/ShionTerunaga/ts-shared.git, type: git}
-    version: 1.4.0
     engines: {node: '>=22.12.0'}
 
   tsconfck@3.1.6:
@@ -10769,8 +10770,8 @@ packages:
   vue-component-type-helpers@2.2.12:
     resolution: {integrity: sha512-YbGqHZ5/eW4SnkPNR44mKVc6ZKQoRs/Rux1sxC6rdwXb4qpbOSYfDr9DsTHolOTGmIKgM9j141mZbBeg05R1pw==}
 
-  vue-component-type-helpers@3.2.9:
-    resolution: {integrity: sha512-S3BiWYaLSzHxTpln665ELSrMR9UYmrIDUmhik7nVZxmJjTKL2/a+ew1hvGxksKelivm0ujjWfG1fYOiU/2e8rA==}
+  vue-component-type-helpers@3.3.0:
+    resolution: {integrity: sha512-vwR8DDsBysI9NWXa0okPFpCcW+BUC3sPTuLBNo1faMzw4QWMFd+3/lFYFu29ZN0q+8UReXWJHEYesC9dcXYCLg==}
 
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
@@ -14883,7 +14884,7 @@ snapshots:
       storybook: 10.3.5(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       type-fest: 2.19.0
       vue: 3.5.33(typescript@6.0.3)
-      vue-component-type-helpers: 3.2.9
+      vue-component-type-helpers: 3.3.0
 
   '@storybook/vue3@9.1.2(storybook@9.1.20(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)))(vue@3.5.33(typescript@5.9.3))':
     dependencies:
@@ -14891,7 +14892,7 @@ snapshots:
       storybook: 9.1.20(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       type-fest: 2.19.0
       vue: 3.5.33(typescript@5.9.3)
-      vue-component-type-helpers: 3.2.9
+      vue-component-type-helpers: 3.3.0
 
   '@storybook/vue3@9.1.2(storybook@9.1.20(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)))(vue@3.5.33(typescript@6.0.3))':
     dependencies:
@@ -14899,7 +14900,7 @@ snapshots:
       storybook: 9.1.20(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
       type-fest: 2.19.0
       vue: 3.5.33(typescript@6.0.3)
-      vue-component-type-helpers: 3.2.9
+      vue-component-type-helpers: 3.3.0
 
   '@stylistic/eslint-plugin@5.10.0(eslint@9.39.4(jiti@2.6.1))':
     dependencies:
@@ -15699,6 +15700,28 @@ snapshots:
       - tsx
       - yaml
 
+  '@vanilla-extract/compiler@0.6.0(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)':
+    dependencies:
+      '@vanilla-extract/css': 1.20.1
+      '@vanilla-extract/integration': 8.0.9
+      vite: 8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+      vite-node: 6.0.0(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@vitejs/devtools'
+      - babel-plugin-macros
+      - esbuild
+      - jiti
+      - less
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
   '@vanilla-extract/compiler@0.6.0(@types/node@24.12.0)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)':
     dependencies:
       '@vanilla-extract/css': 1.20.1
@@ -15824,6 +15847,27 @@ snapshots:
       '@vanilla-extract/compiler': 0.6.0(@types/node@22.19.15)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
       '@vanilla-extract/integration': 8.0.9
       vite: 8.0.8(@types/node@22.19.15)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@vitejs/devtools'
+      - babel-plugin-macros
+      - esbuild
+      - jiti
+      - less
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
+  '@vanilla-extract/vite-plugin@5.2.1(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(vite@8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))(yaml@2.8.3)':
+    dependencies:
+      '@vanilla-extract/compiler': 0.6.0(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+      '@vanilla-extract/integration': 8.0.9
+      vite: 8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
@@ -18728,11 +18772,10 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  gh-issue@https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/be36dc7ce7ddcedcda89dfa957b276c321a7a1f2:
+  gh-issue@https://codeload.github.com/ShionTerunaga/gh-issue/tar.gz/b0ad4e8e235f3cfe8e45712fa8418bd37b9c9d78:
     dependencies:
       commander: 14.0.3
       fast-glob: 3.3.3
-      ts-shared: ts-utility-kit@git+https://github.com/ShionTerunaga/ts-shared.git#73744aebea9fa22ff0b8500aa42a758d77f874e3
 
   giget@2.0.0:
     dependencies:
@@ -21784,6 +21827,10 @@ snapshots:
     dependencies:
       seroval: 1.5.4
 
+  seroval-plugins@1.5.4(seroval@1.5.4):
+    dependencies:
+      seroval: 1.5.4
+
   seroval@1.5.4: {}
 
   serve-placeholder@2.0.2:
@@ -21944,7 +21991,7 @@ snapshots:
     dependencies:
       csstype: 3.2.3
       seroval: 1.5.4
-      seroval-plugins: 1.5.1(seroval@1.5.4)
+      seroval-plugins: 1.5.4(seroval@1.5.4)
 
   source-map-js@1.2.1: {}
 
@@ -22411,8 +22458,6 @@ snapshots:
 
   ts-utility-kit@1.4.0: {}
 
-  ts-utility-kit@git+https://github.com/ShionTerunaga/ts-shared.git#73744aebea9fa22ff0b8500aa42a758d77f874e3: {}
-
   tsconfck@3.1.6(typescript@5.9.3):
     optionalDependencies:
       typescript: 5.9.3
@@ -22853,6 +22898,27 @@ snapshots:
       obug: 2.1.1
       pathe: 2.0.3
       vite: 8.0.8(@types/node@22.19.15)(esbuild@0.28.0)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@vitejs/devtools'
+      - esbuild
+      - jiti
+      - less
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - yaml
+
+  vite-node@6.0.0(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3):
+    dependencies:
+      cac: 7.0.0
+      es-module-lexer: 2.0.0
+      obug: 2.1.1
+      pathe: 2.0.3
+      vite: 8.0.8(@types/node@24.12.0)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3)
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
@@ -23381,7 +23447,7 @@ snapshots:
 
   vue-component-type-helpers@2.2.12: {}
 
-  vue-component-type-helpers@3.2.9: {}
+  vue-component-type-helpers@3.3.0: {}
 
   vue-devtools-stub@0.1.0: {}
 
