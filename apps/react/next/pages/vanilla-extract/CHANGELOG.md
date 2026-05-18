@@ -1,5 +1,11 @@
 # @apps/react-next-pages-vanilla-extract
 
+## 3.0.0
+
+### Major Changes
+
+- [#32](https://github.com/ShionTerunaga/frontend-template/pull/32) [`e97817e`](https://github.com/ShionTerunaga/frontend-template/commit/e97817e07c4ecf2e5b08fa8f81381647f21795a4) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Since ts-shard has been deprecated, we have switched to ts-utility-kit.
+
 ## 2.0.7
 
 ### Patch Changes
