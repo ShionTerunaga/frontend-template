@@ -1,6 +1,6 @@
 import * as v from "valibot";
-import { type Option } from "ts-shared";
-import { type Result } from "ts-shared";
+import { type Option } from "ts-utility-kit";
+import { type Result } from "ts-utility-kit";
 import { fetcher } from "./fetcher";
 import { type FetcherError } from "@/shared/error/fetcher";
 

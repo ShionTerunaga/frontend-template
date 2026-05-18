@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { getCharacter } from "../service/get-character";
-import type { Option } from "ts-shared";
+import type { Option } from "ts-utility-kit";
 import type { APIView } from "../model/model-view";
 import type { SinglePageGetCharacters } from "./characters.type";
-import { optionUtility } from "ts-shared";
+import { optionUtility } from "ts-utility-kit";
 
 import { FetcherError } from "@/shared/error/fetcher";
 

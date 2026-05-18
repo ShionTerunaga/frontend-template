@@ -4,7 +4,7 @@ import { Box } from "@/components/ui";
 import { getRandomDog } from "@/features/random-dog";
 import { RandomDogRes } from "@/features/random-dog/model/random-dog";
 import { ja } from "@/shared/lang/ja";
-import { Option, optionUtility } from "ts-shared";
+import { Option, optionUtility } from "ts-utility-kit";
 import Image from "next/image";
 import { useState } from "react";
 import randomStartStyle from "./random-start.css";

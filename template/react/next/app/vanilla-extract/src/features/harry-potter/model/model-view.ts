@@ -1,4 +1,4 @@
-import { Option } from "ts-shared";
+import { Option } from "ts-utility-kit";
 
 export interface APIView {
     id: string;

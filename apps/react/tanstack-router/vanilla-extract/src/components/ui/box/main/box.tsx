@@ -2,7 +2,7 @@ import type { ChildrenOnly } from '@/shared/types/react'
 import { boxVariants } from './box.css'
 import type { CheckerProps } from '@/shared/types/object'
 import type { ElementType } from 'react'
-import { classMerger } from 'ts-shared'
+import { classMerger } from 'ts-utility-kit'
 
 /**
  * Box Width Type

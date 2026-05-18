@@ -2,7 +2,7 @@ import { onMounted, ref } from "vue";
 import type { APIView } from "../model/model-view";
 import { getCharacter } from "../service/get-character";
 import type { FetcherError } from "~/shared/error/fetcher";
-import { optionUtility, type Option } from "ts-shared";
+import { optionUtility, type Option } from "ts-utility-kit";
 
 export function useGetCharacters() {
     const { createNone, createSome } = optionUtility;

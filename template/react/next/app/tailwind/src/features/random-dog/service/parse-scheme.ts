@@ -1,7 +1,7 @@
-import { resultUtility, Result } from "ts-shared";
+import { resultUtility, Result } from "ts-utility-kit";
 import { RandomDogRes } from "../model/random-dog";
 import { createFetcherError } from "@/shared/error/fetcher";
-import { Option, optionUtility } from "ts-shared";
+import { Option, optionUtility } from "ts-utility-kit";
 import { FetcherError } from "@/shared/error/fetcher";
 
 export function parseScheme(
