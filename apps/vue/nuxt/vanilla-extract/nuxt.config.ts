@@ -1,10 +1,12 @@
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
+const isStorybookEnabled = process.env.NUXT_STORYBOOK_ENABLED === "true";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     components: [{ path: "~/app/components", extensions: ["vue"] }],
     storybook: {
-        enabled: process.env.NUXT_STORYBOOK_ENABLED === "true"
+        enabled: isStorybookEnabled
     },
     vite: {
         plugins: [vanillaExtractPlugin()]
@@ -16,5 +18,5 @@ export default defineNuxtConfig({
         }
     },
 
-    modules: ["@nuxt/image", "@nuxtjs/storybook"]
+    modules: ["@nuxt/image", ...(isStorybookEnabled ? ["@nuxtjs/storybook"] : [])]
 });
