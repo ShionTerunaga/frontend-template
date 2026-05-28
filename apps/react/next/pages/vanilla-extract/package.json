@@ -1,6 +1,6 @@
 {
     "name": "@apps/react-next-pages-vanilla-extract",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "private": true,
     "scripts": {
         "dev": "pnpm exec next dev",

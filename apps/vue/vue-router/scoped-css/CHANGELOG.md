@@ -1,5 +1,11 @@
 # @apps/vue-vue-router-scoped-css
 
+## 4.0.0
+
+### Major Changes
+
+- [`81e59ed`](https://github.com/ShionTerunaga/frontend-template/commit/81e59ed480becf0477f5159c4292460df01c208d) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Upgraded ts-utility-kit to v2
+
 ## 3.0.0
 
 ### Major Changes
