@@ -1,14 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { getCharacter } from "../service/get-character";
-import type { Option } from "ts-utility-kit";
+import { createNone, createSome, isNone, Option } from 'ts-utility-kit/option'
 import type { APIView } from "../model/model-view";
 import type { SinglePageGetCharacters } from "./characters.type";
-import { optionUtility } from "ts-utility-kit";
+import { isErr } from 'ts-utility-kit/result'
 import { FetcherError } from "@/shared/error/fetcher";
 
 export function useSinglePageCharacters() {
-    const { createNone, createSome } = optionUtility;
-
     const [fetchCharacter, setFetchCharacter] =
         useState<Option<Array<APIView>>>(createNone());
 
@@ -22,12 +20,12 @@ export function useSinglePageCharacters() {
 
             if (!isMounted) return;
 
-            if (result.isErr) {
+            if (isErr(result)) {
                 setError(createSome(result.err));
                 return;
             }
 
-            if (result.value.isNone) {
+            if (isNone(result.value)) {
                 return;
             }
 
@@ -37,15 +35,14 @@ export function useSinglePageCharacters() {
         return () => {
             isMounted = false;
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const isLoading: boolean = useMemo(() => {
-        return fetchCharacter.isNone && error.isNone;
+        return isNone(fetchCharacter) && isNone(error);
     }, [fetchCharacter, error]);
 
     const characters: Array<SinglePageGetCharacters> = useMemo(() => {
-        if (fetchCharacter.isNone) {
+        if (isNone(fetchCharacter)) {
             return [];
         }
 

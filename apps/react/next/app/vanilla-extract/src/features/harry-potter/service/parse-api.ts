@@ -1,15 +1,12 @@
-import { resultUtility, Result } from "ts-utility-kit";
+import { createOk, Result } from 'ts-utility-kit/result'
 import { APIRes } from "../model/model-res";
 import { APIView } from "../model/model-view";
-import { Option, optionUtility } from "ts-utility-kit";
+import { createSome, Option, optionConversion } from 'ts-utility-kit/option'
 import { FetcherError } from "@/shared/error/fetcher";
 
 export function parseApi(
     api: APIRes
 ): Result<Option<Array<APIView>>, FetcherError> {
-    const { createOk } = resultUtility;
-    const { createSome, optionConversion } = optionUtility;
-
     const filterList: Array<APIView> = api
         .filter((item) => item.image !== "")
         .map((item) => {

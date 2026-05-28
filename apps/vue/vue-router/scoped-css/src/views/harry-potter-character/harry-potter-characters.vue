@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useGetCharacters } from '@/features/harry-potter'
+import { isSome } from 'ts-utility-kit/option'
 import { ja } from '../../shared/lang/ja'
 import Card from '@/components/layout/card/card.vue'
 
@@ -11,9 +12,9 @@ const { isLoading, characters, error } = useGetCharacters()
     <h1 class="title">{{ ja.app.harryPotter.title }}</h1>
 
     <p v-if="isLoading">Loading...</p>
-    <p v-else-if="error.isSome">Error: {{ error.value.message }}</p>
+    <p v-else-if="isSome(error)">Error: {{ error.value.message }}</p>
 
-    <div v-else-if="characters.isSome" class="grid-box">
+    <div v-else-if="isSome(characters)" class="grid-box">
       <Card
         v-for="character in characters.value"
         :key="character.id"

@@ -1,4 +1,6 @@
 import { Box } from "@/components/ui";
+import { isNone } from 'ts-utility-kit/option'
+import { isErr } from 'ts-utility-kit/result'
 import { CardListView } from "@/components/view";
 import { getCharacter } from "@/features/harry-potter";
 import { ja } from "@/shared/lang/ja";
@@ -6,11 +8,11 @@ import { ja } from "@/shared/lang/ja";
 async function ForceCachePotter() {
     const potters = await getCharacter("force-cache");
 
-    if (potters.isErr) {
+    if (isErr(potters)) {
         return <Box>error</Box>;
     }
 
-    if (potters.value.isNone) {
+    if (isNone(potters.value)) {
         return <Box>no data</Box>;
     }
 

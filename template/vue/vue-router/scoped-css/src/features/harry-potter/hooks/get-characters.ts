@@ -1,11 +1,11 @@
-import { optionUtility, type Option } from 'ts-utility-kit'
+import { createNone, createSome, type Option } from 'ts-utility-kit/option'
+import { isErr } from 'ts-utility-kit/result'
 import { onMounted, ref } from 'vue'
 import type { APIView } from '../model/model-view'
 import { getCharacter } from '../service/get-character'
 import type { FetcherError } from '@/shared/error/fetcher'
 
 export function useGetCharacters() {
-  const { createNone, createSome } = optionUtility
 
   const characters = ref<Option<Array<APIView>>>(createNone())
   const isLoading = ref<boolean>(true)
@@ -16,7 +16,7 @@ export function useGetCharacters() {
 
     const response = await getCharacter()
 
-    if (response.isErr) {
+    if (isErr(response)) {
       error.value = createSome(response.err)
       isLoading.value = false
       return

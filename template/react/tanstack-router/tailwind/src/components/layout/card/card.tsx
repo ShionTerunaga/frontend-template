@@ -1,6 +1,6 @@
 import { Box } from '@/components/ui'
 import type { CheckerProps } from '@/shared/types/object'
-import { classMerger } from 'ts-utility-kit'
+import { classMerger } from 'ts-utility-kit/merger'
 import type { CSSProperties } from 'react'
 
 interface Props {

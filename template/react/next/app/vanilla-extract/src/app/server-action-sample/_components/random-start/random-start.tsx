@@ -4,14 +4,13 @@ import { Box } from "@/components/ui";
 import { getRandomDog } from "@/features/random-dog";
 import { RandomDogRes } from "@/features/random-dog/model/random-dog";
 import { ja } from "@/shared/lang/ja";
-import { Option, optionUtility } from "ts-utility-kit";
+import { createNone, isNone, isSome, Option } from 'ts-utility-kit/option'
 import Image from "next/image";
 import { useState } from "react";
 import randomStartStyle from "./random-start.css";
+import { isOk } from 'ts-utility-kit/result'
 
 function RandomStart() {
-    const { createNone } = optionUtility;
-
     const [dog, setDog] = useState<Option<RandomDogRes>>(() => createNone());
     const [error, setError] = useState<boolean>(false);
 
@@ -20,15 +19,15 @@ function RandomStart() {
             setError(false);
         }
 
-        if (dog.isSome) {
+        if (isSome(dog)) {
             setDog(createNone());
         }
 
         const res = await getRandomDog();
 
-        if (res.isOk && res.value.isSome) {
+        if (isOk(res) && isSome(res.value)) {
             setDog(res.value);
-        } else if (res.isOk && res.value.isNone) {
+        } else if (isOk(res) && isNone(res.value)) {
             setDog(createNone());
         } else {
             setError(true);
@@ -42,7 +41,7 @@ function RandomStart() {
                     <p className={randomStartStyle.errorText}>
                         {ja.app.serverActionSample.error}
                     </p>
-                ) : dog.isSome ? (
+                ) : isSome(dog) ? (
                     <Image
                         src={dog.value.message}
                         width={150}

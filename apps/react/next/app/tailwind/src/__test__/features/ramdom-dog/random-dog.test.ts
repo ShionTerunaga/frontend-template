@@ -1,6 +1,6 @@
 import { getRandomDog } from "@/features/random-dog";
 import { appConfig } from "@/shared/config/config";
-import { optionUtility } from "ts-utility-kit";
+import { createNone, createSome } from 'ts-utility-kit/option'
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mockFetch = vi.fn();
@@ -11,8 +11,6 @@ describe("random-dog", () => {
 
         vi.stubGlobal("fetch", mockFetch);
     });
-
-    const { createSome, createNone } = optionUtility;
 
     it("APIのURLを設定していない場合", async () => {
         vi.spyOn(appConfig, "apiKey2", "get").mockReturnValue(createNone());

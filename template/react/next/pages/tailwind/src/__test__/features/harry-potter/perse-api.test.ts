@@ -1,7 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { optionUtility } from "ts-utility-kit";
 import { APIRes } from "@/features/harry-potter";
 import { parseApi } from "@/features/harry-potter/service/parse-api";
+import { createNone, createSome, isSome } from 'ts-utility-kit/option'
+import { isOk } from 'ts-utility-kit/result'
 
 const mockApiData: APIRes = [
     {
@@ -59,20 +60,16 @@ const mockApiData: APIRes = [
 ];
 
 describe("perseApi", () => {
-    const { createSome, createNone } = optionUtility;
-
     it("適したフォーマットが返ってくる", () => {
         const result = parseApi(mockApiData);
 
         expect(result.kind).toBe("ok");
-
-        if (result.kind !== "ok") {
+        if (!isOk(result)) {
             throw new Error("Result is not ok");
         }
 
         expect(result.value.kind).toBe("some");
-
-        if (result.value.kind !== "some") {
+        if (!isSome(result.value)) {
             throw new Error("Option is not some");
         }
 
@@ -105,14 +102,12 @@ describe("perseApi", () => {
         const result = parseApi(dataWithNulls);
 
         expect(result.kind).toBe("ok");
-
-        if (result.kind !== "ok") {
+        if (!isOk(result)) {
             throw new Error("Result is not ok");
         }
 
         expect(result.value.kind).toBe("some");
-
-        if (result.value.kind !== "some") {
+        if (!isSome(result.value)) {
             throw new Error("Option is not some");
         }
 
@@ -135,7 +130,7 @@ describe("perseApi", () => {
 
         expect(result.kind).toBe("ok");
 
-        if (result.kind !== "ok") {
+        if (!isOk(result)) {
             throw new Error("Result is not ok");
         }
 

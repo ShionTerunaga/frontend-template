@@ -1,5 +1,5 @@
-import type { Result } from 'ts-utility-kit'
-import type { Option } from 'ts-utility-kit'
+import type { Result } from 'ts-utility-kit/result'
+import type { Option } from 'ts-utility-kit/option'
 import type { FetcherError } from '@/shared/error/fetcher'
 import type { APIView } from '@/features/harry-potter'
 import type { CheckerProps } from '@/shared/types/object'

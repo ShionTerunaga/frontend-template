@@ -1,6 +1,6 @@
 import { Box, Heading } from '@/components/ui'
 import { ja } from '@/shared/lang/ja'
-import { classMerger } from 'ts-utility-kit'
+import { classMerger } from 'ts-utility-kit/merger'
 import { Link } from '@tanstack/react-router'
 
 function HomeLayout() {

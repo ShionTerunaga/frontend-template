@@ -1,8 +1,8 @@
 import { hasParseFetcher } from "@/services/fetcher-get/has-parse-fetcher";
+import { createSome } from 'ts-utility-kit/option'
+import { createOk } from 'ts-utility-kit/result'
 import * as v from "valibot";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { optionUtility } from "ts-utility-kit";
-import { resultUtility } from "ts-utility-kit";
 
 const mockFetch = vi.fn();
 
@@ -11,9 +11,6 @@ describe("hasParseFetcher", () => {
         vi.clearAllMocks();
         vi.stubGlobal("fetch", mockFetch);
     });
-
-    const { createSome } = optionUtility;
-    const { createOk } = resultUtility;
 
     it("propagates ng from fetcher", async () => {
         mockFetch.mockResolvedValue({
@@ -50,8 +47,15 @@ describe("hasParseFetcher", () => {
         });
 
         expect(result.kind).toBe("ok");
-        if (result.kind === "ok") expect(result.value.kind).toBe("some");
-        if (result.kind === "ok" && result.value.kind === "some")
-            expect(result.value.value).toBe("parsed");
+        if (result.kind !== "ok") {
+            throw new Error("Result is not ok");
+        }
+
+        expect(result.value.kind).toBe("some");
+        if (result.value.kind !== "some") {
+            throw new Error("Option is not some");
+        }
+
+        expect(result.value.value).toBe("parsed");
     });
 });

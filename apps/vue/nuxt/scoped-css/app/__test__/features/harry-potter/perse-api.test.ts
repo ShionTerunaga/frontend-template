@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { optionUtility } from "ts-utility-kit";
+import { createNone, createSome, type Option } from 'ts-utility-kit/option'
 import { type APIRes } from "@/features/harry-potter";
 import { parseApi } from "@/features/harry-potter/service/parse-api";
 
@@ -59,7 +59,6 @@ const mockApiData: APIRes = [
 ];
 
 describe("perseApi", () => {
-    const { createSome, createNone } = optionUtility;
 
     it("適したフォーマットが返ってくる", () => {
         const result = parseApi(mockApiData);

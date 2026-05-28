@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { optionUtility } from "ts-utility-kit";
 import { appConfig } from "@/shared/config/config";
 import { APIRes, getCharacter } from "@/features/harry-potter";
+import { createNone, createSome } from 'ts-utility-kit/option'
 
 const mockAPIData: APIRes = [
     {
@@ -40,7 +40,6 @@ describe("getCharacter", () => {
 
         vi.stubGlobal("fetch", mockFetch);
     });
-    const { createSome, createNone } = optionUtility;
 
     it("APIのURLを設定していない場合", async () => {
         vi.spyOn(appConfig, "apiKey", "get").mockReturnValue(createNone());
@@ -48,7 +47,6 @@ describe("getCharacter", () => {
         const result = await getCharacter();
 
         expect(result.kind).toBe("ng");
-
         if (result.kind === "ok") return;
 
         expect(result.err.status).toBe(4040);
@@ -71,8 +69,7 @@ describe("getCharacter", () => {
         const result = await getCharacter();
 
         expect(result.kind).toBe("ng");
-
-        if (result.isOk) return;
+        if (result.kind === "ok") return;
 
         expect(result.err.status).toBe(5001);
         expect(result.err.message).toBe("サーバーエラーです");
@@ -94,8 +91,7 @@ describe("getCharacter", () => {
         const result = await getCharacter();
 
         expect(result.kind).toBe("ng");
-
-        if (result.isOk) return;
+        if (result.kind === "ok") return;
 
         expect(result.err.status).toBe(9999);
         expect(result.err.message).toBe("不明なエラーが発生しました");
@@ -114,8 +110,8 @@ describe("getCharacter", () => {
         const result = await getCharacter();
 
         expect(result.kind).toBe("ng");
+        if (result.kind === "ok") return;
 
-        if (result.isOk) return;
         expect(result.err.status).toBe(5000);
         expect(result.err.message).toBe("スキームエラーが発生しました");
     });
@@ -133,19 +129,16 @@ describe("getCharacter", () => {
         const result = await getCharacter();
 
         expect(result.kind).toBe("ok");
-
         if (result.kind !== "ok") {
             throw new Error("Result is not ok");
         }
 
         expect(result.value.kind).toBe("some");
-
         if (result.value.kind !== "some") {
             throw new Error("Option is not some");
         }
 
         expect(result.value.value.length).toBe(1);
-
         expect(result.value.value[0].name).toBe("Harry Potter");
     });
 });

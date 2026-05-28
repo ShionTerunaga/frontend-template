@@ -1,8 +1,8 @@
-import { envParse } from "ts-utility-kit";
+import { optionConversion } from 'ts-utility-kit/option'
 
 export const appConfig = {
     get apiKey() {
         const config = useRuntimeConfig();
-        return envParse(config.public.NUXT_PUBLIC_API_KEY);
+        return optionConversion(config.public.NUXT_PUBLIC_API_KEY);
     }
 };

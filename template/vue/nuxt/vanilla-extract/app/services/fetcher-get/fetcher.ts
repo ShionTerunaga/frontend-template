@@ -1,6 +1,6 @@
 import * as v from "valibot";
-import { type Option, optionUtility } from "ts-utility-kit";
-import { type Result, resultUtility } from "ts-utility-kit";
+import { createNone, createSome, isNone, type Option } from 'ts-utility-kit/option'
+import { checkPromiseReturn, createErr, createOk, isErr, type Result } from 'ts-utility-kit/result'
 import { createHttpScheme } from "@/shared/error/http";
 import {
     createFetcherError,
@@ -30,11 +30,8 @@ export async function fetcher<T extends v.GenericSchema>({
         returnInternalServerError
     } = createFetcherError;
 
-    const { createNone, createSome } = optionUtility;
-    const { createNg, createOk, checkPromiseReturn } = resultUtility;
-
-    if (url.isNone) {
-        return createNg(returnNotSetApiUrl);
+    if (isNone(url)) {
+        return createErr(returnNotSetApiUrl);
     }
 
     const res = await checkPromiseReturn({
@@ -42,11 +39,11 @@ export async function fetcher<T extends v.GenericSchema>({
         err: (e) => {
             console.error(e);
 
-            return createNg(returnFetchFunctionError);
+            return createErr(returnFetchFunctionError);
         }
     });
 
-    if (res.isErr) {
+    if (isErr(res)) {
         return res;
     }
 
@@ -55,15 +52,15 @@ export async function fetcher<T extends v.GenericSchema>({
 
         switch (status) {
             case notFound:
-                return createNg(returnNotFoundAPIUrl);
+                return createErr(returnNotFoundAPIUrl);
             case forbidden:
-                return createNg(returnNoPermission);
+                return createErr(returnNoPermission);
             case badRequest:
-                return createNg(returnBadRequest);
+                return createErr(returnBadRequest);
             case internalServerError:
-                return createNg(returnInternalServerError);
+                return createErr(returnInternalServerError);
             default:
-                return createNg(returnUnknownError);
+                return createErr(returnUnknownError);
         }
     }
 
@@ -72,7 +69,7 @@ export async function fetcher<T extends v.GenericSchema>({
     const judgeType = v.safeParse(scheme, resValue);
 
     if (!judgeType.success) {
-        return createNg(returnSchemeError);
+        return createErr(returnSchemeError);
     }
 
     const okValue = judgeType.output;

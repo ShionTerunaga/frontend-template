@@ -1,15 +1,12 @@
-import { resultUtility, type Result } from 'ts-utility-kit'
+import { createOk, type Result } from 'ts-utility-kit/result'
 import type { APIView } from '../model/model-view'
-import { type Option, optionUtility } from 'ts-utility-kit'
-import { isNull } from 'ts-utility-kit'
+import { createSome, optionConversion, type Option } from 'ts-utility-kit/option'
 import type { FetcherError } from '@/shared/error/fetcher'
 import type { APIRes } from '../model/model-res'
 
 export function parseApi(
     api: APIRes,
 ): Result<Option<Array<APIView>>, FetcherError> {
-    const { createOk } = resultUtility
-    const { createNone, createSome } = optionUtility
     const filterList: Array<APIView> = api
         .filter((item) => item.image !== '')
         .map((item) => {
@@ -26,18 +23,12 @@ export function parseApi(
                 ...rest,
                 alternateNames: alternate_names,
                 alternateActors: alternate_actors,
-                dateOfBirth: isNull(dateOfBirth)
-                    ? createNone()
-                    : createSome(dateOfBirth),
-                yearOfBirth: isNull(yearOfBirth)
-                    ? createNone()
-                    : createSome(yearOfBirth),
+                dateOfBirth: optionConversion(dateOfBirth),
+                yearOfBirth: optionConversion(yearOfBirth),
                 wand: {
                     wood: wand.wood,
                     core: wand.core,
-                    length: isNull(wand.length)
-                        ? createNone()
-                        : createSome(wand.length),
+                    length: optionConversion(wand.length),
                 },
             }
 

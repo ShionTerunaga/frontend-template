@@ -2,6 +2,7 @@ import { Box } from '@/components/ui'
 import { CardListView } from '@/components/view'
 import { useSinglePageCharacters } from '@/features/harry-potter'
 import { ja } from '@/shared/lang/ja'
+import { isSome } from 'ts-utility-kit/option'
 
 function SingleDynamicFetch() {
     const { characters, isLoading, error } = useSinglePageCharacters()
@@ -10,7 +11,7 @@ function SingleDynamicFetch() {
         return <Box>Loading...</Box>
     }
 
-    if (error.isSome) {
+    if (isSome(error)) {
         return <Box>Error: {error.value.message}</Box>
     }
 

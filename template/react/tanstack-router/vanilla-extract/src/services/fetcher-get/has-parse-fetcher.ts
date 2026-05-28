@@ -1,6 +1,6 @@
 import * as v from 'valibot'
-import { type Option, optionUtility } from 'ts-utility-kit'
-import { resultUtility, type Result } from 'ts-utility-kit'
+import { createNone, isNone, type Option } from 'ts-utility-kit/option'
+import { createOk, isErr, type Result } from 'ts-utility-kit/result'
 import { fetcher } from './fetcher'
 import { type FetcherError } from '@/shared/error/fetcher/fetcher-error'
 
@@ -15,8 +15,6 @@ export async function hasParseFetcher<T extends v.GenericSchema, S>({
     cache?: RequestCache
     parse: (scheme: v.InferOutput<T>) => Result<Option<S>, FetcherError>
 }): Promise<Result<Option<S>, FetcherError>> {
-    const { createOk } = resultUtility
-    const { createNone } = optionUtility
 
     const fetcherResult = await fetcher<T>({
         url,
@@ -24,11 +22,11 @@ export async function hasParseFetcher<T extends v.GenericSchema, S>({
         cache,
     })
 
-    if (fetcherResult.isErr) {
+    if (isErr(fetcherResult)) {
         return fetcherResult
     }
 
-    if (fetcherResult.value.isNone) {
+    if (isNone(fetcherResult.value)) {
         return createOk(createNone())
     }
 

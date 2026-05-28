@@ -3,7 +3,7 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 const isStorybookEnabled = process.env.NUXT_STORYBOOK_ENABLED === "true";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+export default {
     components: [{ path: "~/app/components", extensions: ["vue"] }],
     storybook: {
         enabled: isStorybookEnabled
@@ -19,4 +19,4 @@ export default defineNuxtConfig({
     },
 
     modules: ["@nuxt/image", ...(isStorybookEnabled ? ["@nuxtjs/storybook"] : [])]
-});
+};

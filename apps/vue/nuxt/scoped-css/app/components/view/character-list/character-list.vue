@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Option } from "ts-utility-kit";
+import { isSome, isNone, type Option } from 'ts-utility-kit/option'
 import type { APIView } from "~/features/harry-potter";
 import type { FetcherError } from "~/shared/error/fetcher";
 import { Error } from "~/components/layout";
@@ -18,12 +18,12 @@ const props = defineProps<{
         <h1 class="title">{{ props.title }}</h1>
 
         <Error
-            v-if="props.error.isSome"
+            v-if="isSome(props.error)"
             :errorMessage="props.error.value.message"
         />
         <p v-else-if="props.isLoading">loading...</p>
         <Error
-            v-else-if="props.characterList.isNone"
+            v-else-if="isNone(props.characterList)"
             error-message="データがありません"
         />
         <div v-else class="grid-box">

@@ -1,7 +1,7 @@
 import { fetcher } from '@/services/fetcher-get'
+import { createNone, createSome } from 'ts-utility-kit/option'
 import * as v from 'valibot'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { optionUtility } from 'ts-utility-kit'
 
 const mockFetch = vi.fn()
 
@@ -10,8 +10,6 @@ describe('fetcher', () => {
         vi.clearAllMocks()
         vi.stubGlobal('fetch', mockFetch)
     })
-
-    const { createSome, createNone } = optionUtility
 
     it('returns ng when url is none', async () => {
         const result = await fetcher({

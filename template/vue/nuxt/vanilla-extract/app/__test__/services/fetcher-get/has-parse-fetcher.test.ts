@@ -1,8 +1,8 @@
 import { hasParseFetcher } from "@/services/fetcher-get/has-parse-fetcher";
 import * as v from "valibot";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { optionUtility } from "ts-utility-kit";
-import { resultUtility } from "ts-utility-kit";
+import { createSome } from 'ts-utility-kit/option'
+import { createOk } from 'ts-utility-kit/result'
 
 const mockFetch = vi.fn();
 
@@ -11,9 +11,6 @@ describe("hasParseFetcher", () => {
         vi.clearAllMocks();
         vi.stubGlobal("fetch", mockFetch);
     });
-
-    const { createSome } = optionUtility;
-    const { createOk } = resultUtility;
 
     it("propagates ng from fetcher", async () => {
         mockFetch.mockResolvedValue({

@@ -1,7 +1,7 @@
 import type { RandomDogRes } from '@/features/random-dog/model/random-dog'
 import type { FetcherError } from '@/shared/error/fetcher'
-import type { Result } from 'ts-utility-kit'
-import type { Option } from 'ts-utility-kit'
+import { isErr, type Result } from 'ts-utility-kit/result'
+import { isSome, type Option } from 'ts-utility-kit/option'
 import { Heading } from '@/components/ui'
 import { ja } from '@/shared/lang/ja'
 import { Form } from 'react-router'
@@ -21,7 +21,7 @@ export default function ServerActionView({
             {action && (
                 <>
                     <div>
-                        {action.isOk && action.value.isSome ? (
+                        {!isErr(action) && isSome(action.value) ? (
                             <img
                                 alt="Random dog"
                                 width={150}
@@ -32,7 +32,7 @@ export default function ServerActionView({
                     </div>
 
                     <div>
-                        {action.isErr ? (
+                        {isErr(action) ? (
                             <p>Error: {action.err.message}</p>
                         ) : null}
                     </div>

@@ -1,8 +1,8 @@
-import type { Result } from 'ts-utility-kit'
+import type { Result } from 'ts-utility-kit/result'
 import type { Route } from '../+types/root'
 import { getCharacter, type APIView } from '@/features/harry-potter'
 import type { FetcherError } from '@/shared/error/fetcher'
-import type { Option } from 'ts-utility-kit'
+import type { Option } from 'ts-utility-kit/option'
 import ClientLoaderView from '@/screen/client-loader/client-loader'
 
 export function meta({}: Route.MetaArgs) {

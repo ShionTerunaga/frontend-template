@@ -1,6 +1,6 @@
 import type { CheckerProps } from '@/shared/types/object'
 import type { ChildrenOnly } from '@/shared/types/react'
-import { classMerger } from 'ts-utility-kit'
+import { classMerger } from 'ts-utility-kit/merger'
 import type { CSSProperties, ElementType } from 'react'
 
 interface Props extends ChildrenOnly {

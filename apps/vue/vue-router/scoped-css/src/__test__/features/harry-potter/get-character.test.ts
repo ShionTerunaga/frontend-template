@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { optionUtility } from 'ts-utility-kit'
+import { isErr } from 'ts-utility-kit/result'
+import { createNone, createSome, type Option } from 'ts-utility-kit/option'
 import { appConfig } from '@/shared/config/config'
 import { type APIRes, getCharacter } from '@/features/harry-potter'
 
@@ -40,7 +41,6 @@ describe('getCharacter', () => {
 
     vi.stubGlobal('fetch', mockFetch)
   })
-  const { createSome, createNone } = optionUtility
 
   it('APIのURLを設定していない場合', async () => {
     vi.spyOn(appConfig, 'apiKey', 'get').mockReturnValue(createNone())
@@ -72,7 +72,7 @@ describe('getCharacter', () => {
 
     expect(result.kind).toBe('ng')
 
-    if (result.isOk) return
+    if (!isErr(result)) return
 
     expect(result.err.status).toBe(5001)
     expect(result.err.message).toBe('サーバーエラーです')
@@ -95,7 +95,7 @@ describe('getCharacter', () => {
 
     expect(result.kind).toBe('ng')
 
-    if (result.isOk) return
+    if (!isErr(result)) return
 
     expect(result.err.status).toBe(9999)
     expect(result.err.message).toBe('不明なエラーが発生しました')
@@ -115,7 +115,7 @@ describe('getCharacter', () => {
 
     expect(result.kind).toBe('ng')
 
-    if (result.isOk) return
+    if (!isErr(result)) return
     expect(result.err.status).toBe(5000)
     expect(result.err.message).toBe('スキームエラーが発生しました')
   })

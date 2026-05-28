@@ -1,4 +1,4 @@
-import type { Property } from 'csstype'
+import type { CSSProperties } from 'react'
 
 export const appTheme = {
     textNormal: '#333',
@@ -10,7 +10,7 @@ export const appTheme = {
 
 export type Color =
     | `var(--${string})`
-    | Property.Color
-    | Array<`var(--${string})` | Property.Color | undefined>
+    | CSSProperties['color']
+    | Array<`var(--${string})` | CSSProperties['color'] | undefined>
 
 export type AppTheme = typeof appTheme

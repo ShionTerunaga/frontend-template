@@ -1,7 +1,7 @@
 import { ja } from "@/shared/lang/ja";
 import RandomStart from "./_components/random-start/random-start";
 import { Box, Heading } from "@/components/ui";
-import { classMerger } from "ts-utility-kit";
+import { classMerger } from "ts-utility-kit/merger";
 
 export const metadata = {
     title: ja.app.serverActionSample.title,

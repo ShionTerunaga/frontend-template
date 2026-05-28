@@ -1,7 +1,7 @@
 import { hasNoParseFetcher } from '@/services/fetcher-get/has-no-parse-fetcher'
+import { createSome } from 'ts-utility-kit/option'
 import * as v from 'valibot'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { optionUtility } from 'ts-utility-kit'
 
 const mockFetch = vi.fn()
 
@@ -10,8 +10,6 @@ describe('hasNoParseFetcher', () => {
         vi.clearAllMocks()
         vi.stubGlobal('fetch', mockFetch)
     })
-
-    const { createSome } = optionUtility
 
     it('returns ng when schema mismatch', async () => {
         mockFetch.mockResolvedValue({

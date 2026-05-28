@@ -1,5 +1,5 @@
-import { envParse } from 'ts-utility-kit'
+import { optionConversion } from 'ts-utility-kit/option'
 
 export const appConfig = {
-  apiKey: envParse(import.meta.env.VITE_API_KEY),
+  apiKey: optionConversion(import.meta.env.VITE_API_KEY),
 }

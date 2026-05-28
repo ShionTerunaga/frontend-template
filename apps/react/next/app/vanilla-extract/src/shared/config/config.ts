@@ -1,6 +1,6 @@
-import { envParse } from "ts-utility-kit";
+import { optionConversion } from 'ts-utility-kit/option'
 
 export const appConfig = {
-    apiKey: envParse(process.env.API_KEY),
-    apiKey2: envParse(process.env.API_KEY2)
+    apiKey: optionConversion(process.env.API_KEY),
+    apiKey2: optionConversion(process.env.API_KEY2)
 };
