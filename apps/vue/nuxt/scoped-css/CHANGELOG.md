@@ -1,5 +1,12 @@
 # @apps/vue-nuxt-scoped-css
 
+## 3.0.1
+
+### Patch Changes
+
+- [`9cde74d`](https://github.com/ShionTerunaga/frontend-template/commit/9cde74d3e1113c993c16c316c294307bde508eeb)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Security Measures
+
 ## 3.0.0
 
 ### Major Changes
