@@ -61,8 +61,8 @@ importers:
   .:
     dependencies:
       gh-issue-kit:
-        specifier: ^0.10.0
-        version: 0.10.0
+        specifier: ^0.9.1
+        version: 0.9.1
     devDependencies:
       '@changesets/changelog-github':
         specifier: ^0.6.0
@@ -7165,8 +7165,8 @@ packages:
   get-tsconfig@4.13.6:
     resolution: {integrity: sha512-shZT/QMiSHc/YBLxxOkMtgSid5HFoauqCE3/exfsEcwg1WkeqjG+V40yBbBrsD+jW2HDXcs28xOfcbm2jI8Ddw==}
 
-  gh-issue-kit@0.10.0:
-    resolution: {integrity: sha512-ozYOgqalnbYYWBtECZle5Ic0eOnf2ldYImiQVoET+aNJbPYND9NfSqdvgawtoYwHPyV03C2kgyi1rRdZ/RXTnA==}
+  gh-issue-kit@0.9.1:
+    resolution: {integrity: sha512-euedH1nCa3GKd/cLzMbBZxFfd0yBLQ9p/n8ezXAgPw9bZZwe64FOy/i0Eu9SZLk2iE5tTsntAZXej1Es2WH3vg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -19141,7 +19141,7 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  gh-issue-kit@0.10.0:
+  gh-issue-kit@0.9.1:
     dependencies:
       commander: 14.0.3
       fast-glob: 3.3.3
