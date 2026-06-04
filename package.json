@@ -154,6 +154,6 @@
     }
   },
   "dependencies": {
-    "gh-issue-kit": "^0.9.1"
+    "gh-issue-kit": "^0.11.0"
   }
 }
