@@ -1,38 +1,14 @@
 "use client";
 
-import { Box } from "@/components/ui";
-import { isNone, createNone, isSome, Option } from 'ts-utility-kit/option'
-import { isErr } from 'ts-utility-kit/result'
-import { getRandomDog } from "@/features/random-dog";
-import { RandomDogRes } from "@/features/random-dog/model/random-dog";
+import { Box } from "@/lib/ui";
 import { ja } from "@/shared/lang/ja";
 import Image from "next/image";
-import { useState } from "react";
+import { isSome } from "ts-utility-kit/option";
 import { classMerger } from "ts-utility-kit/merger";
+import { useRandomStart } from "./random-start.logig";
 
 function RandomStart() {
-    const [dog, setDog] = useState<Option<RandomDogRes>>(() => createNone());
-    const [error, setError] = useState<boolean>(false);
-
-    const handleClick = async () => {
-        if (error) {
-            setError(false);
-        }
-
-        if (isSome(dog)) {
-            setDog(createNone());
-        }
-
-        const res = await getRandomDog();
-
-        if (!isErr(res) && isSome(res.value)) {
-            setDog(res.value);
-        } else if (!isErr(res) && isNone(res.value)) {
-            setDog(createNone());
-        } else {
-            setError(true);
-        }
-    };
+    const { dog, error, handleClick } = useRandomStart();
 
     return (
         <Box

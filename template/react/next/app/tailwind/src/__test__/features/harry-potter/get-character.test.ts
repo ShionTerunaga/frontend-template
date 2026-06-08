@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { appConfig } from "@/shared/config/config";
-import { createNone, createSome } from 'ts-utility-kit/option'
+import { createNone, createSome } from "ts-utility-kit/option";
 import { APIRes, getCharacter } from "@/features/harry-potter";
 
 const mockAPIData: APIRes = [

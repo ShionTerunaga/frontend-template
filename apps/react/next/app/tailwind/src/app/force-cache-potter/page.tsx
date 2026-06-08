@@ -1,9 +1,13 @@
-import { Box } from "@/components/ui";
-import { isNone } from 'ts-utility-kit/option'
-import { isErr } from 'ts-utility-kit/result'
-import { CardListView } from "@/components/view";
-import { getCharacter } from "@/features/harry-potter";
+import { Box } from "@/lib/ui";
+import { isNone } from "ts-utility-kit/option";
+import { isErr } from "ts-utility-kit/result";
+import { CardListView, getCharacter } from "@/features/harry-potter";
 import { ja } from "@/shared/lang/ja";
+
+export const metadata = {
+    title: ja.app.forceCachePotter.title,
+    description: "force-cache を使った Harry Potter データ取得ページです。"
+};
 
 async function ForceCachePotter() {
     const potters = await getCharacter("force-cache");
