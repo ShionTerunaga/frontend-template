@@ -1,7 +1,7 @@
-import { Box, Heading } from '@/components/ui'
-import { ja } from '@/shared/lang/ja'
-import { classMerger } from 'ts-utility-kit/merger'
-import { Link } from '@tanstack/react-router'
+import { Box, Heading } from '@/lib/ui';
+import { ja } from '@/shared/lang/ja';
+import { classMerger } from 'ts-utility-kit/merger';
+import { Link } from '@tanstack/react-router';
 
 function HomeLayout() {
     return (
@@ -28,30 +28,14 @@ function HomeLayout() {
                     'shadow-[0_22px_50px_rgba(15,23,42,0.12)]',
                 ])}
             >
-                <Heading
-                    className={classMerger(['mb-4', 'tracking-[-0.03em]'])}
-                >
+                <Heading className={classMerger(['mb-4', 'tracking-[-0.03em]'])}>
                     {ja.app.home.title}
                 </Heading>
-                <p
-                    className={classMerger([
-                        'mb-6',
-                        'leading-[1.6]',
-                        'text-slate-700',
-                    ])}
-                >
-                    ルーティングと動的データ取得をこのテンプレートで
-                    すぐ試せます。
+                <p className={classMerger(['mb-6', 'leading-[1.6]', 'text-slate-700'])}>
+                    ルーティングと動的データ取得をこのテンプレートで すぐ試せます。
                 </p>
 
-                <ul
-                    className={classMerger([
-                        'grid',
-                        'list-none',
-                        'gap-3',
-                        'p-0',
-                    ])}
-                >
+                <ul className={classMerger(['grid', 'list-none', 'gap-3', 'p-0'])}>
                     <li>
                         <Link
                             className={classMerger([
@@ -80,7 +64,7 @@ function HomeLayout() {
                 </ul>
             </Box>
         </Box>
-    )
+    );
 }
 
-export default HomeLayout
+export default HomeLayout;

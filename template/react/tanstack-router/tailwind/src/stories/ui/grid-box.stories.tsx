@@ -1,4 +1,4 @@
-import { GridBox } from '@/components/ui'
+import { GridBox } from '@/lib/ui';
 
 const meta = {
     title: 'components/ui/grid-box',
@@ -6,8 +6,8 @@ const meta = {
     parameters: {
         layout: 'fullscreen',
     },
-}
-export default meta
+};
+export default meta;
 
 const items = (
     <>
@@ -17,7 +17,7 @@ const items = (
         <div className="w-full rounded-lg bg-slate-200 p-4">Item 4</div>
         <div className="w-full rounded-lg bg-slate-100 p-4">Item 5</div>
     </>
-)
+);
 
 export const ThreeColumns = {
     args: {
@@ -25,7 +25,7 @@ export const ThreeColumns = {
         gridTemplateColumns: 'three',
         children: items,
     },
-}
+};
 
 export const FourColumns = {
     args: {
@@ -33,4 +33,4 @@ export const FourColumns = {
         gridTemplateColumns: 'four',
         children: items,
     },
-}
+};

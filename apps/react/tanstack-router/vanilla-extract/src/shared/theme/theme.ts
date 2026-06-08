@@ -1,4 +1,4 @@
-import type { Property } from 'csstype'
+import type { Property } from 'csstype';
 
 export const appTheme = {
     textNormal: '#333',
@@ -6,11 +6,11 @@ export const appTheme = {
     likeBlue: 'aqua',
     likeGreen: '#33FFCC',
     popupBackground: 'rgba(0,0,0,0.6)',
-}
+};
 
 export type Color =
     | `var(--${string})`
     | Property.Color
-    | Array<`var(--${string})` | Property.Color | undefined>
+    | Array<`var(--${string})` | Property.Color | undefined>;
 
-export type AppTheme = typeof appTheme
+export type AppTheme = typeof appTheme;

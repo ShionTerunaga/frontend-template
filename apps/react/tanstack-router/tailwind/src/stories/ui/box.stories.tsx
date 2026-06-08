@@ -1,11 +1,11 @@
-import { Box } from '@/components/ui'
+import { Box } from '@/lib/ui';
 
 const meta = {
     title: 'components/ui/box',
     component: Box,
-}
+};
 
-export default meta
+export default meta;
 
 export const Default = {
     args: {
@@ -15,7 +15,7 @@ export const Default = {
         borderRadius: 'middle',
         children: <div className="p-5">Default box</div>,
     },
-}
+};
 
 export const AccentCard = {
     args: {
@@ -27,4 +27,4 @@ export const AccentCard = {
         borderRadius: 'big',
         children: <div className="p-6">Accent card</div>,
     },
-}
+};

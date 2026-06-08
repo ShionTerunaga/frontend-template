@@ -1,11 +1,10 @@
-import { style } from '@vanilla-extract/css'
+import { style } from '@vanilla-extract/css';
 
 const homePageStyle = {
     pageRoot: style({
         minHeight: '100dvh',
         padding: '72px 24px',
-        background:
-            'radial-gradient(circle at 10% 20%, #dbeafe 0%, #eff6ff 45%, #f8fafc 100%)',
+        background: 'radial-gradient(circle at 10% 20%, #dbeafe 0%, #eff6ff 45%, #f8fafc 100%)',
     }),
     container: style({
         maxWidth: 920,
@@ -40,8 +39,7 @@ const homePageStyle = {
         background: '#f8fafc',
         padding: '14px 16px',
         fontWeight: 500,
-        transition:
-            'transform .2s ease, box-shadow .2s ease, border-color .2s ease',
+        transition: 'transform .2s ease, box-shadow .2s ease, border-color .2s ease',
         selectors: {
             '&:hover': {
                 transform: 'translateY(-2px)',
@@ -50,6 +48,6 @@ const homePageStyle = {
             },
         },
     }),
-}
+};
 
-export default homePageStyle
+export default homePageStyle;
