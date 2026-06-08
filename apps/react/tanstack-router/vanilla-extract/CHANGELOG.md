@@ -1,5 +1,15 @@
 # @apps/react-tanstack-router-vanilla-extract
 
+## 5.0.0
+
+### Major Changes
+
+- [#44](https://github.com/ShionTerunaga/frontend-template/pull/44) [`0670777`](https://github.com/ShionTerunaga/frontend-template/commit/0670777b535eda692e5b1e3160399f0c1001e7a8) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the architecture
+
+### Patch Changes
+
+- [#41](https://github.com/ShionTerunaga/frontend-template/pull/41) [`fa7e590`](https://github.com/ShionTerunaga/frontend-template/commit/fa7e5907426e1ab3394b22dcfc79b4804ec2fe44) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the order of imports
+
 ## 4.0.0
 
 ### Major Changes

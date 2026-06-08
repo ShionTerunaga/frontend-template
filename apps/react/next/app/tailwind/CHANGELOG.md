@@ -1,5 +1,11 @@
 # @apps/react-next-app-tailwind
 
+## 5.0.0
+
+### Major Changes
+
+- [#43](https://github.com/ShionTerunaga/frontend-template/pull/43) [`451ddcd`](https://github.com/ShionTerunaga/frontend-template/commit/451ddcdf8eba7f0f7b7309a1cfc29040b649b77e) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the architecture
+
 ## 4.0.0
 
 ### Major Changes
