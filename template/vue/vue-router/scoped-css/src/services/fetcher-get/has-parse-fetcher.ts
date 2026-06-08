@@ -1,5 +1,5 @@
 import * as v from 'valibot'
-import { createNone,  isNone, type Option } from 'ts-utility-kit/option'
+import { createNone, isNone, type Option } from 'ts-utility-kit/option'
 import { createOk, isErr, type Result } from 'ts-utility-kit/result'
 import { fetcher } from './fetcher'
 import { type FetcherError } from '@/shared/error/fetcher/fetcher-error'

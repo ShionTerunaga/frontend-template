@@ -1,21 +1,15 @@
 import * as v from 'valibot'
 import {
-    
     checkPromiseReturn,
     createErr,
     createOk,
-    isErr
+    isErr,
 } from 'ts-utility-kit/result'
-import {
-    
-    createNone,
-    createSome,
-    isNone
-} from 'ts-utility-kit/option'
-import type {Option} from 'ts-utility-kit/option';
-import type {Result} from 'ts-utility-kit/result';
-import type {FetcherError} from '@/shared/error/fetcher';
-import {  createFetcherError } from '@/shared/error/fetcher'
+import { createNone, createSome, isNone } from 'ts-utility-kit/option'
+import type { Option } from 'ts-utility-kit/option'
+import type { Result } from 'ts-utility-kit/result'
+import type { FetcherError } from '@/shared/error/fetcher'
+import { createFetcherError } from '@/shared/error/fetcher'
 import { createHttpScheme } from '@/shared/error/http'
 
 export async function fetcher<T extends v.GenericSchema>({

@@ -6,73 +6,73 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mockFetch = vi.fn();
 
 describe("fetcher", () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-    vi.stubGlobal("fetch", mockFetch);
-  });
-
-  it("returns ng when url is none", async () => {
-    const result = await fetcher({
-      url: createNone(),
-      scheme: v.object({}),
+    beforeEach(() => {
+        vi.clearAllMocks();
+        vi.stubGlobal("fetch", mockFetch);
     });
 
-    expect(result.kind).toBe("ng");
-  });
+    it("returns ng when url is none", async () => {
+        const result = await fetcher({
+            url: createNone(),
+            scheme: v.object({})
+        });
 
-  it("returns ng when response is not ok", async () => {
-    mockFetch.mockResolvedValue({
-      ok: false,
-      status: 500,
-      json: async () => ({}),
+        expect(result.kind).toBe("ng");
     });
 
-    const result = await fetcher({
-      url: createSome("https://example.com"),
-      scheme: v.object({}),
+    it("returns ng when response is not ok", async () => {
+        mockFetch.mockResolvedValue({
+            ok: false,
+            status: 500,
+            json: async () => ({})
+        });
+
+        const result = await fetcher({
+            url: createSome("https://example.com"),
+            scheme: v.object({})
+        });
+
+        expect(result.kind).toBe("ng");
     });
 
-    expect(result.kind).toBe("ng");
-  });
+    it("returns ng when schema validation fails", async () => {
+        mockFetch.mockResolvedValue({
+            ok: true,
+            status: 200,
+            json: async () => ({ foo: 1 })
+        });
 
-  it("returns ng when schema validation fails", async () => {
-    mockFetch.mockResolvedValue({
-      ok: true,
-      status: 200,
-      json: async () => ({ foo: 1 }),
+        const schema = v.object({ bar: v.string() });
+
+        const result = await fetcher({
+            url: createSome("https://example.com"),
+            scheme: schema
+        });
+
+        expect(result.kind).toBe("ng");
     });
 
-    const schema = v.object({ bar: v.string() });
+    it("returns ok when everything is fine", async () => {
+        const body = { bar: "hello" };
+        mockFetch.mockResolvedValue({
+            ok: true,
+            status: 200,
+            json: async () => body
+        });
 
-    const result = await fetcher({
-      url: createSome("https://example.com"),
-      scheme: schema,
+        const schema = v.object({ bar: v.string() });
+
+        const result = await fetcher({
+            url: createSome("https://example.com"),
+            scheme: schema
+        });
+
+        expect(result.kind).toBe("ok");
+        if (result.kind === "ok") {
+            expect(result.value.kind).toBe("some");
+            if (result.value.kind === "some") {
+                expect(result.value.value).toEqual(body);
+            }
+        }
     });
-
-    expect(result.kind).toBe("ng");
-  });
-
-  it("returns ok when everything is fine", async () => {
-    const body = { bar: "hello" };
-    mockFetch.mockResolvedValue({
-      ok: true,
-      status: 200,
-      json: async () => body,
-    });
-
-    const schema = v.object({ bar: v.string() });
-
-    const result = await fetcher({
-      url: createSome("https://example.com"),
-      scheme: schema,
-    });
-
-    expect(result.kind).toBe("ok");
-    if (result.kind === "ok") {
-      expect(result.value.kind).toBe("some");
-      if (result.value.kind === "some") {
-        expect(result.value.value).toEqual(body);
-      }
-    }
-  });
 });

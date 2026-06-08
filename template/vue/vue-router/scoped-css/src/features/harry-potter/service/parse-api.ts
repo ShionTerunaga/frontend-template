@@ -1,4 +1,4 @@
-import { createOk,  type Result } from 'ts-utility-kit/result'
+import { createOk, type Result } from 'ts-utility-kit/result'
 import type { APIRes } from '../model/model-res'
 import type { APIView } from '../model/model-view'
 import { createSome, optionConversion, type Option } from 'ts-utility-kit/option'

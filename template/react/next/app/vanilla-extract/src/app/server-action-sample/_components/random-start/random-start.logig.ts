@@ -7,32 +7,32 @@ import { type Option, createNone, isNone, isSome } from "ts-utility-kit/option";
 import { isOk } from "ts-utility-kit/result";
 
 export function useRandomStart() {
-  const [dog, setDog] = useState<Option<RandomDogRes>>(() => createNone());
-  const [error, setError] = useState<boolean>(false);
+    const [dog, setDog] = useState<Option<RandomDogRes>>(() => createNone());
+    const [error, setError] = useState<boolean>(false);
 
-  const handleClick = async () => {
-    if (error) {
-      setError(false);
-    }
+    const handleClick = async () => {
+        if (error) {
+            setError(false);
+        }
 
-    if (isSome(dog)) {
-      setDog(createNone());
-    }
+        if (isSome(dog)) {
+            setDog(createNone());
+        }
 
-    const res = await getRandomDog();
+        const res = await getRandomDog();
 
-    if (isOk(res) && isSome(res.value)) {
-      setDog(res.value);
-    } else if (isOk(res) && isNone(res.value)) {
-      setDog(createNone());
-    } else {
-      setError(true);
-    }
-  };
+        if (isOk(res) && isSome(res.value)) {
+            setDog(res.value);
+        } else if (isOk(res) && isNone(res.value)) {
+            setDog(createNone());
+        } else {
+            setError(true);
+        }
+    };
 
-  return {
-    dog,
-    error,
-    handleClick,
-  };
+    return {
+        dog,
+        error,
+        handleClick
+    };
 }

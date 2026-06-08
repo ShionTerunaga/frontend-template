@@ -8,11 +8,13 @@ import { hasParseFetcher } from "@/services/fetcher-get";
 import type { Option } from "ts-utility-kit/option";
 import { FetcherError } from "@/shared/error/fetcher";
 
-export async function getRandomDog(): Promise<Result<Option<RandomDogRes>, FetcherError>> {
-  return await hasParseFetcher({
-    url: appConfig.apiKey2,
-    scheme: randomDogScheme,
-    parse: parseScheme,
-    cache: "no-store",
-  });
+export async function getRandomDog(): Promise<
+    Result<Option<RandomDogRes>, FetcherError>
+> {
+    return await hasParseFetcher({
+        url: appConfig.apiKey2,
+        scheme: randomDogScheme,
+        parse: parseScheme,
+        cache: "no-store"
+    });
 }

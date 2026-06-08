@@ -5,27 +5,35 @@ import cardStyles from "./card.css";
 import { Box } from "@/lib/ui";
 
 interface Props {
-  key: number | string;
-  title: string;
-  src: StaticImageData | string;
-  alt: string;
-  boxHeight: number;
-  srcWidth: number;
-  srcHeight: number;
+    key: number | string;
+    title: string;
+    src: StaticImageData | string;
+    alt: string;
+    boxHeight: number;
+    srcWidth: number;
+    srcHeight: number;
 }
 
-export function Card<T extends Props>(props: CheckerProps<T, Props, "different card props">) {
-  const { title, src, alt, srcWidth, srcHeight, boxHeight } = props;
+export function Card<T extends Props>(
+    props: CheckerProps<T, Props, "different card props">
+) {
+    const { title, src, alt, srcWidth, srcHeight, boxHeight } = props;
 
-  const cardStyle: CSSProperties = {
-    width: srcWidth,
-    height: boxHeight,
-  };
+    const cardStyle: CSSProperties = {
+        width: srcWidth,
+        height: boxHeight
+    };
 
-  return (
-    <Box className={cardStyles.cardContainer} style={cardStyle}>
-      <Image src={src} alt={alt} className={cardStyles.image} width={srcWidth} height={srcHeight} />
-      <p className={cardStyles.title}>{title}</p>
-    </Box>
-  );
+    return (
+        <Box className={cardStyles.cardContainer} style={cardStyle}>
+            <Image
+                src={src}
+                alt={alt}
+                className={cardStyles.image}
+                width={srcWidth}
+                height={srcHeight}
+            />
+            <p className={cardStyles.title}>{title}</p>
+        </Box>
+    );
 }
