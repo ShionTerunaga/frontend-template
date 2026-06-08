@@ -1,5 +1,11 @@
 # @apps/react-next-app-vanilla-extract
 
+## 5.0.0
+
+### Major Changes
+
+- [#41](https://github.com/ShionTerunaga/frontend-template/pull/41) [`fa7e590`](https://github.com/ShionTerunaga/frontend-template/commit/fa7e5907426e1ab3394b22dcfc79b4804ec2fe44) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changing the Next.js architecture
+
 ## 4.0.0
 
 ### Major Changes

@@ -1,5 +1,13 @@
 # @apps/react-tanstack-router-tailwind
 
+## 5.0.0
+
+### Major Changes
+
+- [#45](https://github.com/ShionTerunaga/frontend-template/pull/45) [`8bae132`](https://github.com/ShionTerunaga/frontend-template/commit/8bae1326e591fc578cb4e3ebf698adbeb94648a2) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the architecture
+
+- [#44](https://github.com/ShionTerunaga/frontend-template/pull/44) [`0670777`](https://github.com/ShionTerunaga/frontend-template/commit/0670777b535eda692e5b1e3160399f0c1001e7a8) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the architecture
+
 ## 4.0.0
 
 ### Major Changes
