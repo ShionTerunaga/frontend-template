@@ -1,4 +1,4 @@
-import Card from '../../../components/layout/card/card.vue'
+import Card from '../../../components/layout/card/card.vue';
 
 export default {
   title: 'Components/Layout/Card',
@@ -11,6 +11,6 @@ export default {
     srcWidth: 240,
     srcHeight: 240,
   },
-}
+};
 
-export const Default = {}
+export const Default = {};

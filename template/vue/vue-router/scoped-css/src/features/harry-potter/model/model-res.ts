@@ -1,4 +1,4 @@
-import * as v from 'valibot'
+import * as v from 'valibot';
 
 export const APIScheme = v.array(
   v.strictObject({
@@ -27,6 +27,6 @@ export const APIScheme = v.array(
     alive: v.boolean(),
     image: v.string(),
   }),
-)
+);
 
-export type APIRes = v.InferOutput<typeof APIScheme>
+export type APIRes = v.InferOutput<typeof APIScheme>;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isSome, isNone, type Option } from 'ts-utility-kit/option'
+import { isSome, isNone, type Option } from "ts-utility-kit/option";
 import type { APIView } from "~/features/harry-potter";
 import type { FetcherError } from "~/shared/error/fetcher";
 import { Error } from "~/components/layout";

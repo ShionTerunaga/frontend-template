@@ -1,8 +1,8 @@
 {
     "name": "@apps/vue-nuxt-vanilla-extract",
     "version": "4.0.0",
-    "type": "module",
     "private": true,
+    "type": "module",
     "scripts": {
         "build": "nuxt build",
         "dev": "nuxt dev",
@@ -11,7 +11,11 @@
         "storybook": "cross-env NUXT_STORYBOOK_ENABLED=true nuxt prepare && cross-env NUXT_STORYBOOK_ENABLED=true storybook dev -p 6006",
         "build-storybook": "cross-env NUXT_STORYBOOK_ENABLED=true nuxt prepare && cross-env NUXT_STORYBOOK_ENABLED=true storybook build",
         "postinstall": "nuxt prepare",
-        "lint": "echo 'lint is not configured for @apps/vue-nuxt-vanilla-extract'",
+        "lint": "oxlint . --fix -D correctness --ignore-path .gitignore",
+        "lint:check": "oxlint . -D correctness --ignore-path .gitignore",
+        "format": "oxfmt --config .oxfmtrc.json --write .",
+        "format:check": "oxfmt --config .oxfmtrc.json --check .",
+        "check": "oxlint . -D correctness --ignore-path .gitignore && oxfmt --config .oxfmtrc.json --check .",
         "typecheck": "nuxt typecheck",
         "test": "vitest run",
         "test:unit": "vitest run"
@@ -34,6 +38,8 @@
     "devDependencies": {
         "@nuxtjs/storybook": "^9.0.1",
         "cross-env": "^10.1.0",
+        "oxfmt": "^0.53.0",
+        "oxlint": "~1.29.0",
         "storybook": "^9.1.20"
     }
 }

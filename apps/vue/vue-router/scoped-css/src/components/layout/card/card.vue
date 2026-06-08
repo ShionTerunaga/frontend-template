@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import type { CSSProperties } from 'vue'
+import type { CSSProperties } from 'vue';
 
 const { title, src, alt, boxHeight, srcWidth, srcHeight } = defineProps<{
-  title: string
-  src: string
-  alt: string
-  boxHeight: number
-  srcWidth: number
-  srcHeight: number
-}>()
+  title: string;
+  src: string;
+  alt: string;
+  boxHeight: number;
+  srcWidth: number;
+  srcHeight: number;
+}>();
 
 const boxStyle: CSSProperties = {
   height: `${boxHeight}px`,
   width: `${srcWidth}px`,
-}
+};
 </script>
 
 <template>

@@ -1,6 +1,17 @@
 import * as v from "valibot";
-import { createNone, createSome, isNone, type Option } from 'ts-utility-kit/option'
-import { checkPromiseReturn, createErr, createOk, isErr, type Result } from 'ts-utility-kit/result'
+import {
+    createNone,
+    createSome,
+    isNone,
+    type Option
+} from "ts-utility-kit/option";
+import {
+    checkPromiseReturn,
+    createErr,
+    createOk,
+    isErr,
+    type Result
+} from "ts-utility-kit/result";
 import { createHttpScheme } from "@/shared/error/http";
 import {
     createFetcherError,

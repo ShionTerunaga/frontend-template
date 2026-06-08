@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/home/HomeView.vue'
-import HarryPotterView from '../views/harry-potter-character/harry-potter-characters.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/home/HomeView.vue';
+import HarryPotterView from '../views/harry-potter-character/harry-potter-characters.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +16,6 @@ const router = createRouter({
       component: HarryPotterView,
     },
   ],
-})
+});
 
-export default router
+export default router;
