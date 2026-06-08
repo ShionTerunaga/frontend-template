@@ -1,30 +1,25 @@
-import { Box } from '@/components/ui'
-import { CardListView } from '@/components/view'
-import { useSinglePageCharacters } from '@/features/harry-potter'
-import { ja } from '@/shared/lang/ja'
-import { isSome } from 'ts-utility-kit/option'
+import { Box } from '@/lib/ui';
+import { CardListView } from '@/features/harry-potter';
+import { useSinglePageCharacters } from '@/features/harry-potter';
+import { ja } from '@/shared/lang/ja';
+import { isSome } from 'ts-utility-kit/option';
 
 function SingleDynamicFetch() {
-    const { characters, isLoading, error } = useSinglePageCharacters()
+    const { characters, isLoading, error } = useSinglePageCharacters();
 
     if (isLoading) {
-        return <Box>Loading...</Box>
+        return <Box>Loading...</Box>;
     }
 
     if (isSome(error)) {
-        return <Box>Error: {error.value.message}</Box>
+        return <Box>Error: {error.value.message}</Box>;
     }
 
     if (characters.length === 0) {
-        return <Box>No characters.</Box>
+        return <Box>No characters.</Box>;
     }
 
-    return (
-        <CardListView
-            potters={characters}
-            title={ja.app.singleDynamicPotter.title}
-        />
-    )
+    return <CardListView potters={characters} title={ja.app.singleDynamicPotter.title} />;
 }
 
-export default SingleDynamicFetch
+export default SingleDynamicFetch;

@@ -1,5 +1,5 @@
-import { Card } from '@/components/layout/card/card'
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import { Card } from '@/components/card';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
     title: 'layouts/card',
@@ -7,10 +7,10 @@ const meta = {
     parameters: {
         layout: 'fullscreen',
     },
-} satisfies Meta<typeof Card>
+} satisfies Meta<typeof Card>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Sample1: Story = {
     args: {
@@ -22,7 +22,7 @@ export const Sample1: Story = {
         srcWidth: 150,
         srcHeight: 150,
     },
-}
+};
 
 export const Sample2: Story = {
     args: {
@@ -34,4 +34,4 @@ export const Sample2: Story = {
         srcWidth: 300,
         srcHeight: 250,
     },
-}
+};

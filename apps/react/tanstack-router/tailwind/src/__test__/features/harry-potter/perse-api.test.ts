@@ -1,8 +1,8 @@
-import { describe, it, expect } from 'vitest'
-import { createNone, createSome, isSome } from 'ts-utility-kit/option'
-import { isOk } from 'ts-utility-kit/result'
-import { type APIRes } from '@/features/harry-potter'
-import { parseApi } from '@/features/harry-potter/service/parse-api'
+import { describe, it, expect } from 'vitest';
+import { createNone, createSome, isSome } from 'ts-utility-kit/option';
+import { isOk } from 'ts-utility-kit/result';
+import { type APIRes } from '@/features/harry-potter';
+import { parseApi } from '@/features/harry-potter/service/parse-api';
 
 const mockApiData: APIRes = [
     {
@@ -57,35 +57,35 @@ const mockApiData: APIRes = [
         alive: false,
         image: '',
     },
-]
+];
 
 describe('perseApi', () => {
     it('適したフォーマットが返ってくる', () => {
-        const result = parseApi(mockApiData)
+        const result = parseApi(mockApiData);
 
-        expect(result.kind).toBe('ok')
+        expect(result.kind).toBe('ok');
 
         if (!isOk(result)) {
-            throw new Error('Result is not ok')
+            throw new Error('Result is not ok');
         }
 
-        expect(result.value.kind).toBe('some')
+        expect(result.value.kind).toBe('some');
 
         if (!isSome(result.value)) {
-            throw new Error('Option is not some')
+            throw new Error('Option is not some');
         }
 
-        expect(result.value.value.length).toBe(1)
+        expect(result.value.value.length).toBe(1);
 
-        const harry = result.value.value[0]
+        const harry = result.value.value[0];
 
-        expect(harry.name).toBe('Harry Potter')
-        expect(harry.alternateNames).toEqual(['The Boy Who Lived'])
-        expect(harry.gender).toBe('male')
-        expect(harry.dateOfBirth).toEqual(createSome('31-07-1980'))
-        expect(harry.yearOfBirth).toEqual(createSome(1980))
-        expect(harry.wand.length).toEqual(createSome(11))
-    })
+        expect(harry.name).toBe('Harry Potter');
+        expect(harry.alternateNames).toEqual(['The Boy Who Lived']);
+        expect(harry.gender).toBe('male');
+        expect(harry.dateOfBirth).toEqual(createSome('31-07-1980'));
+        expect(harry.yearOfBirth).toEqual(createSome(1980));
+        expect(harry.wand.length).toEqual(createSome(11));
+    });
 
     it('nullをOptionに変換できているか', () => {
         const dataWithNulls: APIRes = [
@@ -99,45 +99,45 @@ describe('perseApi', () => {
                 },
                 image: 'https://someimage.jpg',
             },
-        ]
+        ];
 
-        const result = parseApi(dataWithNulls)
+        const result = parseApi(dataWithNulls);
 
-        expect(result.kind).toBe('ok')
+        expect(result.kind).toBe('ok');
 
         if (!isOk(result)) {
-            throw new Error('Result is not ok')
+            throw new Error('Result is not ok');
         }
 
-        expect(result.value.kind).toBe('some')
+        expect(result.value.kind).toBe('some');
 
         if (!isSome(result.value)) {
-            throw new Error('Option is not some')
+            throw new Error('Option is not some');
         }
 
-        expect(result.value.value.length).toBe(1)
+        expect(result.value.value.length).toBe(1);
 
-        const character = result.value.value[0]
+        const character = result.value.value[0];
 
-        expect(character.dateOfBirth).toEqual(createNone())
-        expect(character.yearOfBirth).toEqual(createNone())
-        expect(character.wand.length).toEqual(createNone())
-    })
+        expect(character.dateOfBirth).toEqual(createNone());
+        expect(character.yearOfBirth).toEqual(createNone());
+        expect(character.wand.length).toEqual(createNone());
+    });
 
     it('imageが空文字の時は要素が省かれる', () => {
         const dataWithNoImages: APIRes = mockApiData.map((item) => ({
             ...item,
             image: '',
-        }))
+        }));
 
-        const result = parseApi(dataWithNoImages)
+        const result = parseApi(dataWithNoImages);
 
-        expect(result.kind).toBe('ok')
+        expect(result.kind).toBe('ok');
 
         if (!isOk(result)) {
-            throw new Error('Result is not ok')
+            throw new Error('Result is not ok');
         }
 
-        expect(result.value.kind).toBe('some')
-    })
-})
+        expect(result.value.kind).toBe('some');
+    });
+});

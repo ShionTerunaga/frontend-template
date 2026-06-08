@@ -1,4 +1,4 @@
-import { Heading } from '@/components/ui'
+import { Heading } from '@/lib/ui';
 
 const meta = {
     title: 'components/ui/heading',
@@ -6,8 +6,8 @@ const meta = {
     parameters: {
         layout: 'padded',
     },
-}
-export default meta
+};
+export default meta;
 
 export const Primary = {
     args: {
@@ -16,7 +16,7 @@ export const Primary = {
         color: 'textNormal',
         children: 'Tailwind Heading',
     },
-}
+};
 
 export const Inverted = {
     args: {
@@ -25,4 +25,4 @@ export const Inverted = {
         color: 'textWhite',
         children: 'Readable on dark backgrounds',
     },
-}
+};
