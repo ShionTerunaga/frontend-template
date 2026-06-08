@@ -26,6 +26,15 @@ This project uses
 to automatically optimize and load [Geist](https://vercel.com/font), a new font
 family for Vercel.
 
+## Formatting
+
+This project uses `oxfmt` for code formatting.
+
+```bash
+pnpm format
+pnpm format:check
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

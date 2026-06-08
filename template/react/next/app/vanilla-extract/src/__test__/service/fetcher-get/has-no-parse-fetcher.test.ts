@@ -1,5 +1,5 @@
 import { hasNoParseFetcher } from "@/services/fetcher-get/has-no-parse-fetcher";
-import { createSome } from 'ts-utility-kit/option'
+import { createSome } from "ts-utility-kit/option";
 import * as v from "valibot";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 

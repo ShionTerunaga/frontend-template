@@ -1,7 +1,7 @@
-import { createOk, Result } from 'ts-utility-kit/result'
+import { createOk, Result } from "ts-utility-kit/result";
 import { APIRes } from "../model/model-res";
 import { APIView } from "../model/model-view";
-import { createSome, Option, optionConversion } from 'ts-utility-kit/option'
+import { createSome, Option, optionConversion } from "ts-utility-kit/option";
 import { FetcherError } from "@/shared/error/fetcher";
 
 export function parseApi(

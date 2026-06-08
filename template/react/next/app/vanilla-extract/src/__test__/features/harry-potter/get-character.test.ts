@@ -1,7 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { appConfig } from "@/shared/config/config";
-import { APIRes, getCharacter } from "@/features/harry-potter";
-import { createNone, createSome } from 'ts-utility-kit/option'
+import { createNone, createSome } from "ts-utility-kit/option";
+import type { APIRes } from "@/features/harry-potter/model/model-res";
+import { getCharacter } from "@/features/harry-potter/service/get-character";
 
 const mockAPIData: APIRes = [
     {

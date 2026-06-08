@@ -6,7 +6,11 @@ export const APIScheme = v.array(
         name: v.string(),
         alternate_names: v.array(v.string()),
         species: v.string(),
-        gender: v.union([v.literal("male"), v.literal("female"), v.literal("")]),
+        gender: v.union([
+            v.literal("male"),
+            v.literal("female"),
+            v.literal("")
+        ]),
         house: v.string(),
         dateOfBirth: v.nullable(v.string()),
         yearOfBirth: v.nullable(v.number()),

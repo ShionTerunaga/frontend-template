@@ -5,10 +5,10 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
     plugins: [
         tsconfigPaths({
-            projects: ["./tsconfig.json"],
-            ignoreConfigErrors: true
+            projects: ['./tsconfig.json'],
+            ignoreConfigErrors: true,
         }),
-        react()
+        react(),
     ],
     test: {
         environment: 'jsdom',
