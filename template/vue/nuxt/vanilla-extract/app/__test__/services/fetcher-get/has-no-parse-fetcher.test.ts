@@ -1,7 +1,7 @@
 import { hasNoParseFetcher } from "@/services/fetcher-get/has-no-parse-fetcher";
 import * as v from "valibot";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { createSome } from 'ts-utility-kit/option'
+import { createSome } from "ts-utility-kit/option";
 
 const mockFetch = vi.fn();
 

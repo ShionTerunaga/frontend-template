@@ -1,7 +1,7 @@
 import { fetcher } from "@/services/fetcher-get/fetcher";
 import * as v from "valibot";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { createNone, createSome } from 'ts-utility-kit/option'
+import { createNone, createSome } from "ts-utility-kit/option";
 
 const mockFetch = vi.fn();
 

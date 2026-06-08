@@ -1,12 +1,11 @@
 import { onMounted, ref } from "vue";
-import { isErr } from 'ts-utility-kit/result'
+import { isErr } from "ts-utility-kit/result";
 import type { APIView } from "../model/model-view";
 import { getCharacter } from "../service/get-character";
 import type { FetcherError } from "~/shared/error/fetcher";
-import { createNone, createSome, type Option } from 'ts-utility-kit/option'
+import { createNone, createSome, type Option } from "ts-utility-kit/option";
 
 export function useGetCharacters() {
-
     const characters = ref<Option<Array<APIView>>>(createNone());
     const isLoading = ref<boolean>(true);
     const error = ref<Option<FetcherError>>(createNone());

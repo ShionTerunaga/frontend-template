@@ -1,1 +1,1 @@
-export * from './card/card.vue'
+export * from './card/card.vue';

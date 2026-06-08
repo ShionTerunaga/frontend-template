@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { style } from '@vanilla-extract/css';
 
 const cardStyles = {
   cardContainer: style({
@@ -19,6 +19,6 @@ const cardStyles = {
     color: '#333',
     margin: 0,
   }),
-}
+};
 
-export default cardStyles
+export default cardStyles;

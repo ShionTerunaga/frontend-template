@@ -13,5 +13,8 @@ export default {
         }
     },
 
-    modules: ["@nuxt/image", ...(isStorybookEnabled ? ["@nuxtjs/storybook"] : [])]
+    modules: [
+        "@nuxt/image",
+        ...(isStorybookEnabled ? ["@nuxtjs/storybook"] : [])
+    ]
 };

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useGetCharacters } from '@/features/harry-potter'
-import { isSome } from 'ts-utility-kit/option'
-import { ja } from '../../shared/lang/ja'
-import Card from '@/components/layout/card/card.vue'
+import { useGetCharacters } from '@/features/harry-potter';
+import { isSome } from 'ts-utility-kit/option';
+import { ja } from '../../shared/lang/ja';
+import Card from '@/components/layout/card/card.vue';
 
-const { isLoading, characters, error } = useGetCharacters()
+const { isLoading, characters, error } = useGetCharacters();
 </script>
 
 <template>

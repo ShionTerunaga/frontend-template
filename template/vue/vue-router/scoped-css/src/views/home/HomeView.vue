@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ja } from '../../shared/lang/ja'
+import { ja } from '../../shared/lang/ja';
 </script>
 
 <template>

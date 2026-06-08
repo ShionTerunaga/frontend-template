@@ -47,8 +47,11 @@ pnpm build
 pnpm test:unit
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Lint and Format with `oxlint` and `oxfmt`
 
 ```sh
 pnpm lint
+pnpm lint:check
+pnpm format
+pnpm format:check
 ```

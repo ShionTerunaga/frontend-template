@@ -77,3 +77,12 @@ bun run preview
 Check out the
 [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for
 more information.
+
+## Linting and Formatting
+
+```bash
+pnpm lint
+pnpm lint:check
+pnpm format
+pnpm format:check
+```
