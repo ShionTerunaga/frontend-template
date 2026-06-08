@@ -1,6 +1,6 @@
 import * as v from "valibot";
-import { createNone, isNone, Option } from 'ts-utility-kit/option'
-import { createOk, isErr, Result } from 'ts-utility-kit/result'
+import { createNone, isNone, Option } from "ts-utility-kit/option";
+import { createOk, isErr, Result } from "ts-utility-kit/result";
 import { fetcher } from "./fetcher";
 import { FetcherError } from "@/shared/error/fetcher/fetcher-error";
 

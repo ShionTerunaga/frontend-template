@@ -1,6 +1,6 @@
 import { ja } from "@/shared/lang/ja";
 import RandomStart from "./_components/random-start/random-start";
-import { Box, Heading } from "@/components/ui";
+import { Box, Heading } from "@/lib/ui";
 import { classMerger } from "ts-utility-kit/merger";
 
 export const metadata = {

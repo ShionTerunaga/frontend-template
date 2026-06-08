@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { APIRes } from "@/features/harry-potter";
 import { parseApi } from "@/features/harry-potter/service/parse-api";
-import { createNone, createSome } from 'ts-utility-kit/option'
+import { createNone, createSome } from "ts-utility-kit/option";
 
 const mockApiData: APIRes = [
     {
