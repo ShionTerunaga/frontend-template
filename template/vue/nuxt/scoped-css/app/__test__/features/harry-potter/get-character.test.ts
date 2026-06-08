@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { isErr } from "ts-utility-kit/result";
-import { createNone, createSome, type Option } from "ts-utility-kit/option";
+import { createNone, createSome } from "ts-utility-kit/option";
 import { appConfig } from "@/shared/config/config";
 import { type APIRes, getCharacter } from "@/features/harry-potter";
 
