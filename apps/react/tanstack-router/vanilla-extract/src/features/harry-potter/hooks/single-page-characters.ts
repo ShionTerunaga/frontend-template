@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { createNone, createSome, isNone, type Option } from 'ts-utility-kit/option'
+import {
+    createNone,
+    createSome,
+    isNone,
+    type Option,
+} from 'ts-utility-kit/option'
 import { isErr } from 'ts-utility-kit/result'
 import { getCharacter } from '../service/get-character'
 import type { APIView } from '../model/model-view'

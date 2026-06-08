@@ -1,6 +1,11 @@
-import { createOk, type Result } from 'ts-utility-kit/result'
+import {  createOk } from 'ts-utility-kit/result'
+import {
+    createSome,
+    optionConversion
+} from 'ts-utility-kit/option'
+import type {Option} from 'ts-utility-kit/option';
+import type {Result} from 'ts-utility-kit/result';
 import type { APIView } from '../model/model-view'
-import { createSome, optionConversion, type Option } from 'ts-utility-kit/option'
 import type { FetcherError } from '@/shared/error/fetcher'
 import type { APIRes } from '../model/model-res'
 

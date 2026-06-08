@@ -64,6 +64,7 @@
     "build-storybook:vr-sc": "node --experimental-strip-types ./scripts/run-workspace-task.ts build-storybook vr-sc",
     "build-storybook:vr-ve": "node --experimental-strip-types ./scripts/run-workspace-task.ts build-storybook vr-ve",
     "lint": "turbo run lint",
+    "format": "turbo run format",
     "test": "pnpm run test:all",
     "test:list": "node --experimental-strip-types ./scripts/print-workspace-commands.ts test",
     "test:all": "node --experimental-strip-types ./scripts/run-workspace-task.ts test all",

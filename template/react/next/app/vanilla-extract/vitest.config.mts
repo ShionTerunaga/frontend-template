@@ -3,17 +3,17 @@ import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-    plugins: [
-        tsconfigPaths({
-            projects: ["./tsconfig.json"],
-            ignoreConfigErrors: true
-        }),
-        react()
-    ],
-    test: {
-        environment: "jsdom",
-        coverage: {
-            provider: "v8"
-        }
-    }
+  plugins: [
+    tsconfigPaths({
+      projects: ["./tsconfig.json"],
+      ignoreConfigErrors: true,
+    }),
+    react(),
+  ],
+  test: {
+    environment: "jsdom",
+    coverage: {
+      provider: "v8",
+    },
+  },
 });

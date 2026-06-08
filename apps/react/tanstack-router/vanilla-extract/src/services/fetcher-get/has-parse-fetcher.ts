@@ -15,7 +15,6 @@ export async function hasParseFetcher<T extends v.GenericSchema, S>({
     cache?: RequestCache
     parse: (scheme: v.InferOutput<T>) => Result<Option<S>, FetcherError>
 }): Promise<Result<Option<S>, FetcherError>> {
-
     const fetcherResult = await fetcher<T>({
         url,
         scheme,

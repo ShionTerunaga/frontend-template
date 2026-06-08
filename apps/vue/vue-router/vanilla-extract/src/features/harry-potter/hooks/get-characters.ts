@@ -6,7 +6,6 @@ import { getCharacter } from '../service/get-character'
 import type { FetcherError } from '@/shared/error/fetcher'
 
 export function useGetCharacters() {
-  
   const characters = ref<Option<Array<APIView>>>(createNone())
   const isLoading = ref<boolean>(true)
   const error = ref<Option<FetcherError>>(createNone())
