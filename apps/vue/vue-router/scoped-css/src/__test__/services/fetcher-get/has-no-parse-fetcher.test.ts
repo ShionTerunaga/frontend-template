@@ -1,7 +1,8 @@
 import { hasNoParseFetcher } from '@/services/fetcher-get/has-no-parse-fetcher';
+import { createSome, isSome } from 'ts-utility-kit/option';
+import { isErr, isOk } from 'ts-utility-kit/result';
 import * as v from 'valibot';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { createSome } from 'ts-utility-kit/option';
+import { beforeEach, describe, expect, it, vi, assert } from 'vitest';
 
 const mockFetch = vi.fn();
 
@@ -25,7 +26,8 @@ describe('hasNoParseFetcher', () => {
       scheme: schema,
     });
 
-    expect(result.kind).toBe('ng');
+    expect(isErr(result)).toBeTruthy();
+    assert(isErr(result));
   });
 
   it('returns ok when matches', async () => {
@@ -43,9 +45,9 @@ describe('hasNoParseFetcher', () => {
       scheme: schema,
     });
 
-    expect(result.kind).toBe('ok');
-    if (result.kind === 'ok') {
-      expect(result.value.kind).toBe('some');
-    }
+    expect(isOk(result)).toBeTruthy();
+    assert(isOk(result));
+
+    expect(isSome(result.value)).toBeTruthy();
   });
 });

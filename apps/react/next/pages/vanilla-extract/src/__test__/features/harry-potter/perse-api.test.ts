@@ -1,8 +1,8 @@
-import { describe, it, expect } from "vitest";
-import { createNone, createSome, isSome } from 'ts-utility-kit/option'
-import { isOk } from 'ts-utility-kit/result'
+import { describe, it, expect, assert } from "vitest";
 import { APIRes } from "@/features/harry-potter";
 import { parseApi } from "@/features/harry-potter/service/parse-api";
+import { createNone, createSome, isSome } from "ts-utility-kit/option";
+import { isOk } from "ts-utility-kit/result";
 
 const mockApiData: APIRes = [
     {
@@ -63,20 +63,16 @@ describe("perseApi", () => {
     it("適したフォーマットが返ってくる", () => {
         const result = parseApi(mockApiData);
 
-        expect(result.kind).toBe("ok");
+        expect(isOk(result)).toBeTruthy();
+        assert(isOk(result));
 
-        if (!isOk(result)) {
-            throw new Error("Result is not ok");
-        }
+        expect(isSome(result.value)).toBeTruthy();
 
-        expect(result.value.kind).toBe("some");
-        if (!isSome(result.value)) {
-            throw new Error("Option is not some");
-        }
+        assert(isSome(result.value));
 
         expect(result.value.value.length).toBe(1);
 
-        const harry = result.value.value[0];
+        const harry = result.value.value[0]!;
 
         expect(harry.name).toBe("Harry Potter");
         expect(harry.alternateNames).toEqual(["The Boy Who Lived"]);
@@ -102,20 +98,16 @@ describe("perseApi", () => {
 
         const result = parseApi(dataWithNulls);
 
-        expect(result.kind).toBe("ok");
+        expect(isOk(result)).toBeTruthy();
+        assert(isOk(result));
 
-        if (!isOk(result)) {
-            throw new Error("Result is not ok");
-        }
+        expect(isSome(result.value)).toBeTruthy();
 
-        expect(result.value.kind).toBe("some");
-        if (!isSome(result.value)) {
-            throw new Error("Option is not some");
-        }
+        assert(isSome(result.value));
 
         expect(result.value.value.length).toBe(1);
 
-        const character = result.value.value[0];
+        const character = result.value.value[0]!;
 
         expect(character.dateOfBirth).toEqual(createNone());
         expect(character.yearOfBirth).toEqual(createNone());
@@ -130,12 +122,9 @@ describe("perseApi", () => {
 
         const result = parseApi(dataWithNoImages);
 
-        expect(result.kind).toBe("ok");
+        expect(isOk(result)).toBeTruthy();
+        assert(isOk(result));
 
-        if (!isOk(result)) {
-            throw new Error("Result is not ok");
-        }
-
-        expect(result.value.kind).toBe("some");
+        expect(isSome(result.value)).toBeTruthy();
     });
 });

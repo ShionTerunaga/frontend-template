@@ -1,8 +1,8 @@
 import { hasParseFetcher } from '@/services/fetcher-get/has-parse-fetcher';
+import { createSome, isSome } from 'ts-utility-kit/option';
+import { createOk, isErr, isOk } from 'ts-utility-kit/result';
 import * as v from 'valibot';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { createSome } from 'ts-utility-kit/option';
-import { createOk } from 'ts-utility-kit/result';
+import { beforeEach, describe, expect, it, vi, assert } from 'vitest';
 
 const mockFetch = vi.fn();
 
@@ -27,7 +27,8 @@ describe('hasParseFetcher', () => {
             parse: () => createOk(createSome('ok')),
         });
 
-        expect(result.kind).toBe('ng');
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
     });
 
     it('returns parse result when fetcher ok', async () => {
@@ -46,9 +47,13 @@ describe('hasParseFetcher', () => {
             parse: () => createOk(createSome('parsed')),
         });
 
-        expect(result.kind).toBe('ok');
-        if (result.kind === 'ok') expect(result.value.kind).toBe('some');
-        if (result.kind === 'ok' && result.value.kind === 'some')
-            expect(result.value.value).toBe('parsed');
+        expect(isOk(result)).toBeTruthy();
+        assert(isOk(result));
+
+        expect(isSome(result.value)).toBeTruthy();
+
+        assert(isSome(result.value));
+
+        expect(result.value.value).toBe('parsed');
     });
 });

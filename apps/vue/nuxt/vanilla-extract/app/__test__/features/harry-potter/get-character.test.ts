@@ -1,6 +1,6 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { isErr } from "ts-utility-kit/result";
-import { createNone, createSome } from "ts-utility-kit/option";
+import { describe, it, expect, vi, beforeEach, assert } from "vitest";
+import { isErr, isOk } from "ts-utility-kit/result";
+import { createNone, createSome, isSome } from "ts-utility-kit/option";
 import { appConfig } from "@/shared/config/config";
 import { type APIRes, getCharacter } from "@/features/harry-potter";
 
@@ -47,9 +47,8 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
-
-        if (result.kind === "ok") return;
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(4040);
         expect(result.err.message).toBe("APIのURLが設定されていません");
@@ -62,7 +61,7 @@ describe("getCharacter", () => {
 
         mockFetch.mockResolvedValue({
             ok: false,
-            status: 500, //statusコードは存在するものを定義する
+            status: 500,
             json: async () => ({
                 message: "mock error"
             })
@@ -70,9 +69,8 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
-
-        if (!isErr(result)) return;
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(5001);
         expect(result.err.message).toBe("サーバーエラーです");
@@ -85,7 +83,7 @@ describe("getCharacter", () => {
 
         mockFetch.mockResolvedValue({
             ok: false,
-            status: 300, //statusコードは存在しないものを定義する
+            status: 300,
             json: async () => ({
                 message: "mock error"
             })
@@ -93,9 +91,8 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
-
-        if (!isErr(result)) return;
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(9999);
         expect(result.err.message).toBe("不明なエラーが発生しました");
@@ -113,9 +110,9 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
-        if (!isErr(result)) return;
         expect(result.err.status).toBe(5000);
         expect(result.err.message).toBe("スキームエラーが発生しました");
     });
@@ -132,24 +129,14 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ok");
+        expect(isOk(result)).toBeTruthy();
+        assert(isOk(result));
 
-        if (result.kind !== "ok") {
-            throw new Error("Result is not ok");
-        }
+        expect(isSome(result.value)).toBeTruthy();
 
-        expect(result.value.kind).toBe("some");
-
-        if (result.value.kind !== "some") {
-            throw new Error("Option is not some");
-        }
+        assert(isSome(result.value));
 
         expect(result.value.value.length).toBe(1);
-
-        if (result.value.value[0] === undefined) {
-            throw new Error("No characters found");
-        }
-
-        expect(result.value.value[0].name).toBe("Harry Potter");
+        expect(result.value.value[0]!.name).toBe("Harry Potter");
     });
 });

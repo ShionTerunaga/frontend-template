@@ -1,8 +1,9 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, assert } from "vitest";
 import { appConfig } from "@/shared/config/config";
-import { createNone, createSome } from "ts-utility-kit/option";
+import { createNone, createSome, isSome } from "ts-utility-kit/option";
 import type { APIRes } from "@/features/harry-potter/model/model-res";
 import { getCharacter } from "@/features/harry-potter/service/get-character";
+import { isErr, isOk } from "ts-utility-kit/result";
 
 const mockAPIData: APIRes = [
     {
@@ -47,8 +48,9 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
-        if (result.kind === "ok") return;
+        expect(isErr(result)).toBeTruthy();
+
+        assert(isErr(result));
 
         expect(result.err.status).toBe(4040);
         expect(result.err.message).toBe("APIのURLが設定されていません");
@@ -69,8 +71,8 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
-        if (result.kind === "ok") return;
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(5001);
         expect(result.err.message).toBe("サーバーエラーです");
@@ -91,8 +93,8 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
-        if (result.kind === "ok") return;
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(9999);
         expect(result.err.message).toBe("不明なエラーが発生しました");
@@ -110,8 +112,8 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ng");
-        if (result.kind === "ok") return;
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(5000);
         expect(result.err.message).toBe("スキームエラーが発生しました");
@@ -129,15 +131,11 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(result.kind).toBe("ok");
-        if (result.kind !== "ok") {
-            throw new Error("Result is not ok");
-        }
+        expect(isOk(result)).toBeTruthy();
+        assert(isOk(result));
 
-        expect(result.value.kind).toBe("some");
-        if (result.value.kind !== "some") {
-            throw new Error("Option is not some");
-        }
+        expect(isSome(result.value)).toBeTruthy();
+        assert(isSome(result.value));
 
         expect(result.value.value.length).toBe(1);
         expect(result.value.value[0].name).toBe("Harry Potter");

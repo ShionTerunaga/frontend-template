@@ -99,10 +99,39 @@
     "lefthook": "^1.11.13",
     "turbo": "^2.9.14"
   },
+  "overrides": {
+    "@babel/core": "7.29.7",
+    "esbuild": "0.28.1",
+    "js-yaml": "4.2.0",
+    "launch-editor": "2.14.1",
+    "nuxt": "4.4.7",
+    "react-router": "7.15.1",
+    "shell-quote": "1.8.4",
+    "tar": "7.5.16",
+    "ws": "8.21.0",
+    "@nuxt/vite-builder": {
+      "vite": "7.3.5"
+    },
+    "vite-node": {
+      "vite": "7.3.5"
+    }
+  },
+  "resolutions": {
+    "@babel/core": "7.29.7",
+    "esbuild": "0.28.1",
+    "js-yaml": "4.2.0",
+    "launch-editor": "2.14.1",
+    "nuxt": "4.4.7",
+    "react-router": "7.15.1",
+    "shell-quote": "1.8.4",
+    "tar": "7.5.16",
+    "ws": "8.21.0"
+  },
   "pnpm": {
     "overrides": {
-      "@nuxt/vite-builder>vite": "7.3.2",
+      "@nuxt/vite-builder>vite": "7.3.5",
       "@unhead/vue": "2.1.13",
+      "@babel/core": "7.29.7",
       "brace-expansion@1.1.12": "1.1.13",
       "brace-expansion@2.0.1": "2.0.3",
       "brace-expansion@2.0.2": "2.0.3",
@@ -110,8 +139,11 @@
       "brace-expansion@5.0.5": "5.0.6",
       "devalue": "5.8.1",
       "defu": "6.1.7",
+      "esbuild": "0.28.1",
       "fast-uri": "3.1.2",
       "js-cookie": "3.0.8",
+      "js-yaml": "4.2.0",
+      "launch-editor": "2.14.1",
       "@babel/plugin-transform-modules-systemjs": "7.29.4",
       "@tanstack/eslint-config": "0.3.4",
       "@tanstack/react-devtools": "0.7.11",
@@ -142,15 +174,21 @@
       "@tanstack/devtools-client>@tanstack/devtools-event-client": "0.3.5",
       "lodash": "4.18.1",
       "node-forge": "1.4.0",
+      "nuxt": "4.4.7",
       "path-to-regexp": "0.1.13",
       "picomatch@2.3.1": "2.3.2",
       "picomatch@4.0.3": "4.0.4",
       "postcss": "8.5.14",
       "qs": "6.15.2",
+      "read-yaml-file": "2.1.0",
+      "react-router": "7.15.1",
       "serialize-javascript": "7.0.5",
+      "shell-quote": "1.8.4",
       "srvx": "0.11.13",
+      "tar": "7.5.16",
       "unhead": "2.1.13",
-      "ws": "8.20.1",
+      "vite-node>vite": "7.3.5",
+      "ws": "8.21.0",
       "yaml": "2.8.3"
     }
   },

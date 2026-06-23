@@ -1,7 +1,8 @@
 import { getRandomDog } from "@/features/random-dog";
 import { appConfig } from "@/shared/config/config";
 import { createNone, createSome } from "ts-utility-kit/option";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { isErr } from "ts-utility-kit/result";
+import { assert, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mockFetch = vi.fn();
 
@@ -17,11 +18,8 @@ describe("random-dog", () => {
 
         const result = await getRandomDog();
 
-        expect(result.kind).toBe("ng");
-
-        if (result.kind === "ok") {
-            throw new Error("Unexpected ok result");
-        }
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(4040);
         expect(result.err.message).toBe("APIのURLが設定されていません");
@@ -42,10 +40,8 @@ describe("random-dog", () => {
 
         const result = await getRandomDog();
 
-        expect(result.kind).toBe("ng");
-        if (result.kind === "ok") {
-            throw new Error("Unexpected ok result");
-        }
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(5001);
         expect(result.err.message).toBe("サーバーエラーです");
@@ -66,10 +62,8 @@ describe("random-dog", () => {
 
         const result = await getRandomDog();
 
-        expect(result.kind).toBe("ng");
-        if (result.kind === "ok") {
-            throw new Error("Unexpected ok result");
-        }
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(9999);
         expect(result.err.message).toBe("不明なエラーが発生しました");
@@ -92,10 +86,8 @@ describe("random-dog", () => {
 
         const result = await getRandomDog();
 
-        expect(result.kind).toBe("ng");
-        if (result.kind === "ok") {
-            throw new Error("Unexpected ok result");
-        }
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
 
         expect(result.err.status).toBe(5000);
         expect(result.err.message).toBe("スキームエラーが発生しました");

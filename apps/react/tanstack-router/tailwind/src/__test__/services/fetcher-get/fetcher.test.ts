@@ -1,7 +1,8 @@
-import { fetcher } from '@/services/fetcher-get';
-import { createNone, createSome } from 'ts-utility-kit/option';
+import { fetcher } from '@/services/fetcher-get/fetcher';
+import { createNone, createSome, isSome } from 'ts-utility-kit/option';
+import { isErr, isOk } from 'ts-utility-kit/result';
 import * as v from 'valibot';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi, assert } from 'vitest';
 
 const mockFetch = vi.fn();
 
@@ -17,7 +18,8 @@ describe('fetcher', () => {
             scheme: v.object({}),
         });
 
-        expect(result.kind).toBe('ng');
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
     });
 
     it('returns ng when response is not ok', async () => {
@@ -32,7 +34,8 @@ describe('fetcher', () => {
             scheme: v.object({}),
         });
 
-        expect(result.kind).toBe('ng');
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
     });
 
     it('returns ng when schema validation fails', async () => {
@@ -49,7 +52,8 @@ describe('fetcher', () => {
             scheme: schema,
         });
 
-        expect(result.kind).toBe('ng');
+        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
     });
 
     it('returns ok when everything is fine', async () => {
@@ -67,12 +71,13 @@ describe('fetcher', () => {
             scheme: schema,
         });
 
-        expect(result.kind).toBe('ok');
-        if (result.kind === 'ok') {
-            expect(result.value.kind).toBe('some');
-            if (result.value.kind === 'some') {
-                expect(result.value.value).toEqual(body);
-            }
-        }
+        expect(isOk(result)).toBeTruthy();
+        assert(isOk(result));
+
+        expect(isSome(result.value)).toBeTruthy();
+
+        assert(isSome(result.value));
+
+        expect(result.value.value).toEqual(body);
     });
 });
