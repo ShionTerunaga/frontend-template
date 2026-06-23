@@ -1,5 +1,11 @@
 # @apps/react-next-app-tailwind
 
+## 6.0.0
+
+### Major Changes
+
+- [`68a95e6`](https://github.com/ShionTerunaga/frontend-template/commit/68a95e668d1cddc5ea8e08aee370c9917d27975a) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changes to the Test Code
+
 ## 5.0.0
 
 ### Major Changes
