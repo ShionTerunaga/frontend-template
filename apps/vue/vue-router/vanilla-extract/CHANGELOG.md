@@ -1,5 +1,15 @@
 # @apps/vue-vue-router-vanilla-extract
 
+## 5.0.0
+
+### Major Changes
+
+- [#45](https://github.com/ShionTerunaga/frontend-template/pull/45) [`8bae132`](https://github.com/ShionTerunaga/frontend-template/commit/8bae1326e591fc578cb4e3ebf698adbeb94648a2) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the architecture
+
+### Patch Changes
+
+- [#41](https://github.com/ShionTerunaga/frontend-template/pull/41) [`fa7e590`](https://github.com/ShionTerunaga/frontend-template/commit/fa7e5907426e1ab3394b22dcfc79b4804ec2fe44) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the order of imports
+
 ## 4.0.0
 
 ### Major Changes
