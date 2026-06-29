@@ -1,5 +1,13 @@
 # @apps/react-next-app-vanilla-extract
 
+## 6.0.1
+
+### Patch Changes
+
+- 9ad1482: author: @ShionTerunaga
+
+  Upgrade packages
+
 ## 6.0.0
 
 ### Major Changes

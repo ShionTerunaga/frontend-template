@@ -1,5 +1,13 @@
 # @apps/vue-vue-router-scoped-css
 
+## 6.0.1
+
+### Patch Changes
+
+- 9ad1482: author: @ShionTerunaga
+
+  Resolving Issues with Launching Storybook and Starting the Nuxt Development Server
+
 ## 6.0.0
 
 ### Major Changes
