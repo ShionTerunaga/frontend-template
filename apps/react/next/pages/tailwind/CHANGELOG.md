@@ -1,5 +1,11 @@
 # @apps/react-next-pages-tailwind
 
+## 5.0.1
+
+### Patch Changes
+
+- 1d44a68: release
+
 ## 5.0.0
 
 ### Major Changes
