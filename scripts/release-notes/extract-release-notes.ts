@@ -63,6 +63,10 @@ function getPackageHeading(filePath: string, content: string): string {
 }
 
 function extractLatestSection(filePath: string): string | null {
+  if (!existsSync(filePath)) {
+    return null;
+  }
+
   const content = readFileSync(filePath, "utf8");
   const lines = content.split(/\r?\n/);
   const startIndex = lines.findIndex((line) => /^## /.test(line));
@@ -111,6 +115,10 @@ function getPackageMetadata(filePath: string): {
 }
 
 function createReleaseEntry(filePath: string): ReleaseEntry | null {
+  if (!existsSync(filePath)) {
+    return null;
+  }
+
   const metadata = getPackageMetadata(filePath);
   const notes = extractLatestSection(filePath);
 
