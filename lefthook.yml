@@ -1,17 +1,19 @@
 pre-commit:
-  parallel: true
-  commands:
-    lint:
-      run: pnpm lint
-    test:
-      run: pnpm test
+    parallel: true
+    commands:
+        lint:
+            run: pnpm lint
+        test:
+            run: pnpm test
+        copy:
+            run: pnpm copy:template && git add .
 
 post-merge:
-  commands:
-    install-deps:
-      run: pnpm install
+    commands:
+        install-deps:
+            run: pnpm install
 
 commit-msg:
-  commands:
-    commitlint:
-      run: pnpm exec commitlint --edit {1}
+    commands:
+        commitlint:
+            run: pnpm exec commitlint --edit {1}

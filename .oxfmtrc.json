@@ -1,0 +1,16 @@
+{
+    "$schema": "./node_modules/oxfmt/configuration_schema.json",
+    "ignorePatterns": [
+        "**/node_modules/**",
+        "**/.nuxt/**",
+        "**/.output/**",
+        "**/dist/**",
+        "**/coverage/**",
+        ".wrangler/**",
+        "package-lock.json",
+        "pnpm-lock.yaml",
+        "yarn.lock"
+    ],
+    "semi": true,
+    "tabWidth": 4
+}

@@ -7,9 +7,8 @@ const reactCopies = [
     ["next", "app", "vanilla-extract"],
     ["next", "pages", "tailwind"],
     ["next", "pages", "vanilla-extract"],
-    ["react-router", "vanilla-extract"],
     ["tanstack-router", "tailwind"],
-    ["tanstack-router", "vanilla-extract"]
+    ["tanstack-router", "vanilla-extract"],
 ] as const;
 
 export async function reactCopy() {
