@@ -1,5 +1,11 @@
 # @apps/vue-vue-router-scoped-css
 
+## 6.0.2
+
+### Patch Changes
+
+- 1d44a68: release
+
 ## 6.0.1
 
 ### Patch Changes
