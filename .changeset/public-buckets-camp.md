@@ -5,4 +5,6 @@
 "@apps/vue-nuxt-scoped-css": patch
 ---
 
+author: @ShionTerunaga
+
 Resolving Issues with Launching Storybook and Starting the Nuxt Development Server

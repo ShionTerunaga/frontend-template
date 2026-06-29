@@ -5,4 +5,6 @@
 "@apps/react-next-app-tailwind": patch
 ---
 
+author: @ShionTerunaga
+
 Upgrade packages
