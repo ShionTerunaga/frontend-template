@@ -47,7 +47,6 @@ describe('getCharacter', () => {
 
         const result = await getCharacter();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(4040);
@@ -69,7 +68,6 @@ describe('getCharacter', () => {
 
         const result = await getCharacter();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(5001);
@@ -91,7 +89,6 @@ describe('getCharacter', () => {
 
         const result = await getCharacter();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(9999);
@@ -110,7 +107,6 @@ describe('getCharacter', () => {
 
         const result = await getCharacter();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(5000);
@@ -129,10 +125,7 @@ describe('getCharacter', () => {
 
         const result = await getCharacter();
 
-        expect(isOk(result)).toBeTruthy();
         assert(isOk(result));
-
-        expect(isSome(result.value)).toBeTruthy();
 
         assert(isSome(result.value));
 

@@ -14,7 +14,6 @@ describe("parseScheme", () => {
 
         const res = parseScheme(sample);
 
-        expect(isErr(res)).toBeTruthy();
         assert(isErr(res));
 
         expect(res.err.status).toBe(8000);
@@ -30,10 +29,7 @@ describe("parseScheme", () => {
 
         const res = parseScheme(sample);
 
-        expect(isOk(res)).toBeTruthy();
         assert(isOk(res));
-
-        expect(isSome(res.value)).toBeTruthy();
         assert(isSome(res.value));
 
         expect(res.value.value).toEqual(sample);

@@ -1,8 +1,8 @@
-import { hasNoParseFetcher } from "@/services/fetcher-get/has-no-parse-fetcher";
+import { hasNoParseFetcher } from "@/services/fetcher-get";
 import { createSome, isSome } from "ts-utility-kit/option";
 import { isErr, isOk } from "ts-utility-kit/result";
 import * as v from "valibot";
-import { assert, beforeEach, describe, expect, it, vi } from "vitest";
+import { assert, beforeEach, describe, it, vi, expect } from "vitest";
 
 const mockFetch = vi.fn();
 
@@ -26,7 +26,9 @@ describe("hasNoParseFetcher", () => {
             scheme: schema
         });
 
-        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
+
+        expect(result.err.type).toBe("fetcherError");
     });
 
     it("returns ok when matches", async () => {
@@ -44,8 +46,8 @@ describe("hasNoParseFetcher", () => {
             scheme: schema
         });
 
-        expect(isOk(result)).toBeTruthy();
         assert(isOk(result));
-        expect(isSome(result.value)).toBeTruthy();
+        assert(isSome(result.value));
+        expect(result.value.value).toEqual(payload);
     });
 });

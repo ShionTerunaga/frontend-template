@@ -17,10 +17,7 @@ describe("random-dog", () => {
         vi.spyOn(appConfig, "apiKey2", "get").mockReturnValue(createNone());
 
         const result = await getRandomDog();
-
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
-
         expect(result.err.status).toBe(4040);
         expect(result.err.message).toBe("APIのURLが設定されていません");
     });
@@ -40,7 +37,6 @@ describe("random-dog", () => {
 
         const result = await getRandomDog();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(5001);
@@ -62,7 +58,6 @@ describe("random-dog", () => {
 
         const result = await getRandomDog();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(9999);
@@ -86,7 +81,6 @@ describe("random-dog", () => {
 
         const result = await getRandomDog();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(5000);

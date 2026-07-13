@@ -63,11 +63,10 @@ describe('perseApi', () => {
   it('適したフォーマットが返ってくる', () => {
     const result = parseApi(mockApiData);
 
-    expect(isOk(result)).toBeTruthy();
     assert(isOk(result));
 
-    expect(isSome(result.value)).toBeTruthy();
     assert(isSome(result.value));
+
     expect(result.value.value.length).toBe(1);
 
     const harry = result.value.value[0]!;
@@ -96,11 +95,10 @@ describe('perseApi', () => {
 
     const result = parseApi(dataWithNulls);
 
-    expect(isOk(result)).toBeTruthy();
     assert(isOk(result));
 
-    expect(isSome(result.value)).toBeTruthy();
     assert(isSome(result.value));
+
     expect(result.value.value.length).toBe(1);
 
     const character = result.value.value[0]!;
@@ -118,9 +116,10 @@ describe('perseApi', () => {
 
     const result = parseApi(dataWithNoImages);
 
-    expect(isOk(result)).toBeTruthy();
     assert(isOk(result));
 
-    expect(isSome(result.value)).toBeTruthy();
+    assert(isSome(result.value));
+
+    expect(result.value.value).toHaveLength(0);
   });
 });

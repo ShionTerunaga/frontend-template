@@ -6,7 +6,7 @@
         "dev": "pnpm exec next dev",
         "build": "pnpm exec next build",
         "start": "pnpm exec next start",
-        "lint": "pnpm exec eslint",
+        "lint": "pnpm --workspace-root exec node ./scripts/run-oxlint.ts . --fix -D correctness --ignore-path .gitignore && pnpm exec eslint",
         "typecheck": "pnpm exec tsc --noEmit",
         "storybook": "pnpm exec storybook dev -p 6006",
         "build-storybook": "pnpm exec storybook build",
@@ -43,6 +43,7 @@
         "eslint-config-next": "16.2.3",
         "eslint-plugin-storybook": "^10.0.0",
         "jsdom": "^27.0.1",
+        "oxlint": "~1.29.0",
         "storybook": "^10.3.5",
         "typescript": "^6.0.3"
     }

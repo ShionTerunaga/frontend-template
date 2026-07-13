@@ -48,8 +48,6 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(isErr(result)).toBeTruthy();
-
         assert(isErr(result));
 
         expect(result.err.status).toBe(4040);
@@ -70,10 +68,7 @@ describe("getCharacter", () => {
         });
 
         const result = await getCharacter();
-
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
-
         expect(result.err.status).toBe(5001);
         expect(result.err.message).toBe("サーバーエラーです");
     });
@@ -92,10 +87,7 @@ describe("getCharacter", () => {
         });
 
         const result = await getCharacter();
-
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
-
         expect(result.err.status).toBe(9999);
         expect(result.err.message).toBe("不明なエラーが発生しました");
     });
@@ -112,7 +104,6 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(isErr(result)).toBeTruthy();
         assert(isErr(result));
 
         expect(result.err.status).toBe(5000);
@@ -131,12 +122,8 @@ describe("getCharacter", () => {
 
         const result = await getCharacter();
 
-        expect(isOk(result)).toBeTruthy();
         assert(isOk(result));
-
-        expect(isSome(result.value)).toBeTruthy();
         assert(isSome(result.value));
-
         expect(result.value.value.length).toBe(1);
         expect(result.value.value[0].name).toBe("Harry Potter");
     });

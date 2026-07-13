@@ -9,8 +9,16 @@ setup((app) => {
             props: {
                 src: { type: String, required: false, default: "" },
                 alt: { type: String, required: false, default: "" },
-                width: { type: [String, Number], required: false, default: undefined },
-                height: { type: [String, Number], required: false, default: undefined }
+                width: {
+                    type: [String, Number],
+                    required: false,
+                    default: undefined
+                },
+                height: {
+                    type: [String, Number],
+                    required: false,
+                    default: undefined
+                }
             },
             setup(props, { attrs }) {
                 return () => h("img", { ...attrs, ...props });

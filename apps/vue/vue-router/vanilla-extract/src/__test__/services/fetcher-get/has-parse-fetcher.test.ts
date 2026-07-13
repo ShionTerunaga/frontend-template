@@ -1,4 +1,4 @@
-import { hasParseFetcher } from '@/services/fetcher-get/has-parse-fetcher';
+import { hasParseFetcher } from '@/services/fetcher-get';
 import { createSome, isSome } from 'ts-utility-kit/option';
 import { createOk, isErr, isOk } from 'ts-utility-kit/result';
 import * as v from 'valibot';
@@ -27,7 +27,9 @@ describe('hasParseFetcher', () => {
       parse: () => createOk(createSome('ok')),
     });
 
-    expect(isErr(result)).toBeTruthy();
+    assert(isErr(result));
+
+    expect(result.err.type).toBe('httpError');
   });
 
   it('returns parse result when fetcher ok', async () => {
@@ -46,11 +48,10 @@ describe('hasParseFetcher', () => {
       parse: () => createOk(createSome('parsed')),
     });
 
-    expect(isOk(result)).toBeTruthy();
     assert(isOk(result));
 
-    expect(isSome(result.value)).toBeTruthy();
     assert(isSome(result.value));
+
     expect(result.value.value).toBe('parsed');
   });
 });

@@ -12,7 +12,7 @@
 
 - 9ad1482: author: @ShionTerunaga
 
-  Upgrade packages
+    Upgrade packages
 
 ## 6.0.0
 

@@ -6,7 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "eslint",
+        "lint": "pnpm --workspace-root exec node ./scripts/run-oxlint.ts . --fix -D correctness --ignore-path .gitignore && eslint",
         "format": "oxfmt --write .",
         "format:check": "oxfmt --check .",
         "typecheck": "tsc --noEmit",
@@ -48,6 +48,7 @@
         "eslint-plugin-storybook": "^10.0.0",
         "jsdom": "^26.1.0",
         "oxfmt": "^0.53.0",
+        "oxlint": "~1.29.0",
         "storybook": "^10.3.5",
         "typescript": "^6.0.3"
     }

@@ -12,19 +12,24 @@
 
 - 9ad1482: author: @ShionTerunaga
 
-  Upgrade packages
+    Upgrade packages
 
 ## 6.0.0
 
 ### Major Changes
 
-- [`68a95e6`](https://github.com/ShionTerunaga/frontend-template/commit/68a95e668d1cddc5ea8e08aee370c9917d27975a) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changes to the Test Code
+- [`68a95e6`](https://github.com/ShionTerunaga/frontend-template/commit/68a95e668d1cddc5ea8e08aee370c9917d27975a)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changes to the
+  Test Code
 
 ## 5.0.0
 
 ### Major Changes
 
-- [#41](https://github.com/ShionTerunaga/frontend-template/pull/41) [`fa7e590`](https://github.com/ShionTerunaga/frontend-template/commit/fa7e5907426e1ab3394b22dcfc79b4804ec2fe44) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changing the Next.js architecture
+- [#41](https://github.com/ShionTerunaga/frontend-template/pull/41)
+  [`fa7e590`](https://github.com/ShionTerunaga/frontend-template/commit/fa7e5907426e1ab3394b22dcfc79b4804ec2fe44)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changing the
+  Next.js architecture
 
 ## 4.0.0
 

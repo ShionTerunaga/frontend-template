@@ -12,19 +12,24 @@
 
 - 9ad1482: author: @ShionTerunaga
 
-  Upgrade packages
+    Upgrade packages
 
 ## 6.0.0
 
 ### Major Changes
 
-- [`68a95e6`](https://github.com/ShionTerunaga/frontend-template/commit/68a95e668d1cddc5ea8e08aee370c9917d27975a) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changes to the Test Code
+- [`68a95e6`](https://github.com/ShionTerunaga/frontend-template/commit/68a95e668d1cddc5ea8e08aee370c9917d27975a)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Changes to the
+  Test Code
 
 ## 5.0.0
 
 ### Major Changes
 
-- [#43](https://github.com/ShionTerunaga/frontend-template/pull/43) [`451ddcd`](https://github.com/ShionTerunaga/frontend-template/commit/451ddcdf8eba7f0f7b7309a1cfc29040b649b77e) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the architecture
+- [#43](https://github.com/ShionTerunaga/frontend-template/pull/43)
+  [`451ddcd`](https://github.com/ShionTerunaga/frontend-template/commit/451ddcdf8eba7f0f7b7309a1cfc29040b649b77e)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Change the
+  architecture
 
 ## 4.0.0
 

@@ -1,4 +1,4 @@
-import { fetcher } from "@/services/fetcher-get/fetcher";
+import { fetcher } from "@/services/fetcher-get";
 import { createNone, createSome, isSome } from 'ts-utility-kit/option'
 import { isErr, isOk } from 'ts-utility-kit/result'
 import * as v from "valibot";
@@ -18,7 +18,9 @@ describe("fetcher", () => {
             scheme: v.object({})
         });
 
-        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
+
+        expect(result.err.type).toBe('fetcherError');
     });
 
     it("returns ng when response is not ok", async () => {
@@ -33,7 +35,9 @@ describe("fetcher", () => {
             scheme: v.object({})
         });
 
-        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
+
+        expect(result.err.type).toBe('httpError');
     });
 
     it("returns ng when schema validation fails", async () => {
@@ -50,7 +54,9 @@ describe("fetcher", () => {
             scheme: schema
         });
 
-        expect(isErr(result)).toBeTruthy();
+        assert(isErr(result));
+
+        expect(result.err.type).toBe('fetcherError');
     });
 
     it("returns ok when everything is fine", async () => {
@@ -68,9 +74,7 @@ describe("fetcher", () => {
             scheme: schema
         });
 
-        expect(isOk(result)).toBeTruthy();
         assert(isOk(result));
-        expect(isSome(result.value)).toBeTruthy();
         assert(isSome(result.value));
         expect(result.value.value).toEqual(body);
     });

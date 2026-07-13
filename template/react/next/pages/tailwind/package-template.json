@@ -6,7 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "eslint",
+        "lint": "pnpm --workspace-root exec node ./scripts/run-oxlint.ts . --fix -D correctness --ignore-path .gitignore && eslint",
         "typecheck": "tsc --noEmit",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
@@ -38,6 +38,7 @@
         "eslint": "^9",
         "eslint-config-next": "16.2.3",
         "eslint-plugin-storybook": "^10.0.2",
+        "oxlint": "~1.29.0",
         "storybook": "^10.3.5",
         "tailwindcss": "^4",
         "typescript": "^6.0.3"
