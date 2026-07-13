@@ -12,11 +12,7 @@ export default defineConfig({
             target: 'react',
             autoCodeSplitting: true,
         }),
-        viteReact({
-            babel: {
-                plugins: ['babel-plugin-react-compiler'],
-            },
-        }),
+        viteReact(),
         tailwindcss(),
     ],
     resolve: {
