@@ -1,5 +1,13 @@
 # @apps/react-next-pages-tailwind
 
+## 5.1.0
+
+### Minor Changes
+
+- [`cd4228c`](https://github.com/ShionTerunaga/frontend-template/commit/cd4228c49d4ae0f975d4d8bab733fcc33641cdc6)
+  Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - I omitted
+  `expect` for statements containing `assert`.
+
 ## 5.0.1
 
 ### Patch Changes
