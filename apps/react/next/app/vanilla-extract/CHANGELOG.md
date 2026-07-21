@@ -1,5 +1,11 @@
 # @apps/react-next-app-vanilla-extract
 
+## 6.2.0
+
+### Minor Changes
+
+- [`a27ae15`](https://github.com/ShionTerunaga/frontend-template/commit/a27ae1510016c148e0b6c80feb509061d25825f3) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Upgrade Next.js
+
 ## 6.1.0
 
 ### Minor Changes
