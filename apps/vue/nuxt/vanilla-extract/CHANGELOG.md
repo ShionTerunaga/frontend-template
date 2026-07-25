@@ -1,5 +1,11 @@
 # @apps/vue-nuxt-vanilla-extract
 
+## 6.2.0
+
+### Minor Changes
+
+- [`f890183`](https://github.com/ShionTerunaga/frontend-template/commit/f8901831ffa0b1aa509f137fc189846f550eb058) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Upgrade Nuxt4.5
+
 ## 6.1.0
 
 ### Minor Changes
