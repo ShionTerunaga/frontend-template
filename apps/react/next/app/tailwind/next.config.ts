@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
             new URL("https://ik.imagekit.io/**"),
             new URL("https://images.dog.ceo/**")
         ]
-    }
+    },
 };
 
 export default nextConfig;
