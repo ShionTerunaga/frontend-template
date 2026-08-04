@@ -1,5 +1,11 @@
 # @apps/react-tanstack-router-tailwind
 
+## 6.2.0
+
+### Minor Changes
+
+- [`b2abbbb`](https://github.com/ShionTerunaga/frontend-template/commit/b2abbbb663c2ebbc9a60fb59a1392dcf04ecfb0f) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - Upgrade typescript in tanstack-router
+
 ## 6.1.0
 
 ### Minor Changes
