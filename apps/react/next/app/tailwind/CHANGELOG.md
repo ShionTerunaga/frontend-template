@@ -1,5 +1,11 @@
 # @apps/react-next-app-tailwind
 
+## 6.3.0
+
+### Minor Changes
+
+- [`3d29e45`](https://github.com/ShionTerunaga/frontend-template/commit/3d29e4538cd247bf80f77b79b9fc85a58d7b3a5f) Thanks [@ShionTerunaga](https://github.com/ShionTerunaga)! - upgrade nextjs
+
 ## 6.2.0
 
 ### Minor Changes
